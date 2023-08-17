@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Error404 from "@/components/infopages/Error404.astro";
 import { AstroSeo } from "@astrolib/seo";
 ---
 
@@ -40,4 +41,6 @@ Use AstroSeo in all the pages you want different Seo than the index page
     cardType: "summary_large_image",
   }}
 />
-<BaseLayout />
+<BaseLayout>
+  <Error404 />
+</BaseLayout>

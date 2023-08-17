@@ -1,0 +1,704 @@
+---
+import Video from "./Video.astro";
+---
+
+<section>
+  <div
+    class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-12 lg:flex">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
+      <div>
+        <nav
+          aria-label="Sidebar"
+          class="bg-card ring-1 ring-white/10 rounded-xl p-4 lg:p-8">
+          <div>
+            <Video />
+          </div>
+          <div class="mt-8 pt-8 border-t border-white/10">
+            <div>
+              <a
+                href="#"
+                class="flex items-center h-10 px-4 py-2 text-sm text-black transition-all rounded-lg hover:to-vanta-600 bg-gradient-to-b from-vanta-300 via-vanta-400 to-vanta-500 justify-between"
+                >Buy course
+                <span>$199.9</span></a
+              >
+
+              <ul
+                class="list-none text-vanta-300 mt-8 justify-center flex flex-col gap-2">
+                <li
+                  class="inline-flex items-center gap-2 w-full justify-between">
+                  <div class="inline-flex items-center gap-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-stack-pop h-4 w-4"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.25"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M7 9.5l-3 1.5l8 4l8 -4l-3 -1.5"></path>
+                      <path d="M4 15l8 4l8 -4"></path>
+                      <path d="M12 11v-7"></path>
+                      <path d="M9 7l3 -3l3 3"></path>
+                    </svg>
+                    Level:
+                  </div>
+                  <span> Begginner</span>
+                </li>
+                <li
+                  class="inline-flex items-center gap-2 w-full justify-between">
+                  <div class="inline-flex items-center gap-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-clock w-4 h-4"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.25"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                      <path d="M12 7v5l3 3"></path>
+                    </svg> Duration:
+                  </div>
+                  <span> 8h 45m</span>
+                </li>
+                <li
+                  class="inline-flex items-center gap-2 w-full justify-between">
+                  <div class="inline-flex items-center gap-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-player-play w-4 h-4"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.25"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M7 4v16l13 -8z"></path>
+                    </svg>Videos:
+                  </div>
+                  <span> 125</span>
+                </li>
+                <li
+                  class="inline-flex items-center gap-2 w-full justify-between">
+                  <div class="inline-flex items-center gap-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-file-description w-4 h-4"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.25"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                      <path
+                        d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                      ></path>
+                      <path d="M9 17h6"></path>
+                      <path d="M9 13h6"></path>
+                    </svg>File:
+                  </div>
+                  <span> 12</span>
+                </li>
+                <li
+                  class="inline-flex items-center gap-2 w-full justify-between">
+                  <div class="inline-flex items-center gap-2 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-circle-key w-4 h-4"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.25"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M14 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                      <path d="M21 12a9 9 0 1 1 -18 0a9 9 0 0 1 18 0z"></path>
+                      <path d="M12.5 11.5l-4 4l1.5 1.5"></path>
+                      <path d="M12 15l-1.5 -1.5"></path>
+                    </svg> Lifetime access:
+                  </div>
+                  <span> Yes</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="lg:order-first lg:col-span-2">
+        <div class="flex-shrink-0">
+          <div class="max-w-2xl">
+            <p
+              class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-5xl">
+              Brand & Identity <span class="lg:block">Design for Marketers</span
+              >
+            </p>
+            <p class="text-vanta-300 mt-4 max-w-sm">
+              Uncover the strategies behind successful digital campaigns, from
+              social media to SEO, and elevate your marketing skills.
+            </p>
+            <ul
+              class="list-none text-vanta-300 lg:gap-8 mt-8 justify-center grid grid-cols-1 md:grid-cols-2 gap-2">
+              <li class="inline-flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+                  ></path>
+                  <path d="M9 12l2 2l4 -4"></path>
+                </svg> Online Videos
+              </li>
+              <li class="inline-flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+                  ></path>
+                  <path d="M9 12l2 2l4 -4"></path>
+                </svg>Active Community
+              </li>
+              <li class="inline-flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+                  ></path>
+                  <path d="M9 12l2 2l4 -4"></path>
+                </svg>Multiple Resources
+              </li>
+              <li class="inline-flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+                  ></path>
+                  <path d="M9 12l2 2l4 -4"></path>
+                </svg>One-on-One Mentorship
+              </li>
+            </ul>
+            <div
+              class="inline-flex items-center gap-4 w-full mt-6 pt-6 ring-1 bg-card rounded-2xl p-4 lg:p-8 ring-white/10">
+              <div>
+                <img
+                  class="inline-block w-24 h-24 rounded-full ring-1 ring-vanta-800 shrink-0"
+                  src="/avatars/head1.svg"
+                  alt="Dive into the world of visual communication, mastering design principles, software tools, and creating impactful visuals."
+                />
+              </div>
+              <div>
+                <span
+                  class="inline-flex items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                  Graphic Designer
+                </span>
+                <p class="text-lg mt-2 font-display text-white lg:text-xl">
+                  Juan Guttierez
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            x-data="{
+        tabSelected: 1,
+        tabId: $id('tabs'),
+        tabButtonClicked(tabButton){
+            this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+            this.tabRepositionMarker(tabButton);
+        },
+        tabRepositionMarker(tabButton){
+            this.$refs.tabMarker.style.width=tabButton.offsetWidth + 'px';
+            this.$refs.tabMarker.style.height=tabButton.offsetHeight + 'px';
+            this.$refs.tabMarker.style.left=tabButton.offsetLeft + 'px';
+        },
+        tabContentActive(tabContent){
+            return this.tabSelected == tabContent.id.replace(this.tabId + '-content-', '');
+        },
+        tabButtonActive(tabContent){
+            const tabId = tabContent.id.split('-').slice(-1);
+            return this.tabSelected == tabId;
+        }
+    }"
+            x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
+            class="relative w-full mt-12">
+            <div
+              x-ref="tabButtons"
+              class="relative inline-grid text-white text-left w-full h-8 grid-cols-3 select-none border-b border-white/10">
+              <button
+                :id="$id(tabId)"
+                @click="tabButtonClicked($el);"
+                type="button"
+                :class="{ ' ' : tabButtonActive($el) }"
+                class="relative z-20 inline-flex w-full h-8 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+                >About</button
+              >
+              <button
+                :id="$id(tabId)"
+                @click="tabButtonClicked($el);"
+                type="button"
+                :class="{ ' ' : tabButtonActive($el) }"
+                class="relative z-20 inline-flex w-full h-8 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+                >Reviews</button
+              >
+
+              <div
+                x-ref="tabMarker"
+                class="absolute left-0 z-10 w-12 h-8 duration-300 ease-out"
+                x-cloak>
+                <div class="w-12 h-8 border-b border-white"></div>
+              </div>
+            </div>
+            <div class="relative w-full mt-4">
+              <div
+                :id="$id(tabId + '-content')"
+                x-show="tabContentActive($el)"
+                class="relative">
+                <ul class="" role="list">
+                  <div class="mt-12 prose-styles">
+                    <h2>About the Course:</h2>
+                    <p>
+                      Are you looking to enhance your marketing skills by
+                      mastering the art of brand and identity design? Welcome to
+                      "Brand & Identity Design for Marketers" – a comprehensive
+                      course designed to equip you with the tools and knowledge
+                      needed to create impactful brand identities that resonate
+                      with your audience.
+                    </p>
+
+                    <p>
+                      Whether you're a seasoned marketer, a budding
+                      entrepreneur, or simply curious about the world of design,
+                      this course offers a unique opportunity to delve into the
+                      world of branding. A strong brand identity is more than
+                      just visuals – it's a strategic asset that communicates
+                      your company's values, differentiates you from
+                      competitors, and fosters trust among customers.
+                    </p>
+
+                    <p>
+                      Throughout this course, you'll explore the psychology
+                      behind effective branding, learn to craft consistent
+                      visual identities, and discover the art of aligning brand
+                      messaging across various platforms. From designing
+                      memorable logos to selecting the perfect color palette,
+                      you'll acquire practical skills that can elevate your
+                      marketing campaigns to new heights.
+                    </p>
+
+                    <p>
+                      Our engaging lessons, real-world case studies, and
+                      hands-on exercises will guide you through the entire
+                      process of creating compelling brand identities. By the
+                      end of the course, you'll be prepared to conceptualize,
+                      design, and communicate brand identities that make a
+                      lasting impact in the minds of your target audience.
+                    </p>
+
+                    <p>
+                      Join us on this creative journey and unlock the secrets to
+                      building brands that not only capture attention but also
+                      build lasting connections. Enroll today and embark on a
+                      transformational learning experience that will elevate
+                      your marketing skills to the next level.
+                    </p>
+
+                    <h2>Course Overview:</h2>
+                    <p>
+                      Welcome to "Brand & Identity Design for Marketers"! In
+                      this comprehensive course, we will explore the fundamental
+                      principles of creating compelling brand identities that
+                      resonate with your target audience. Whether you're a
+                      marketer, entrepreneur, or aspiring designer, this course
+                      will equip you with the essential knowledge and practical
+                      skills to effectively shape and communicate a brand's
+                      identity.
+                    </p>
+
+                    <h2>Course Outline:</h2>
+                    <h3>Module 1: Introduction to Brand Identity</h3>
+                    <ul>
+                      <li>Understanding the Role of Branding in Marketing</li>
+                      <li>Differentiating Brand Identity vs. Brand Image</li>
+                      <li>The Psychology Behind Effective Branding</li>
+                    </ul>
+
+                    <!-- More module sections -->
+
+                    <h2>Learning Objectives:</h2>
+                    <p>
+                      By the end of this course, participants will be able to:
+                    </p>
+                    <ul>
+                      <li>
+                        Understand the key concepts of brand identity design and
+                        its significance in marketing.
+                      </li>
+                      <li>
+                        Develop a brand's visual identity, including logo,
+                        colors, and typography.
+                      </li>
+                      <li>
+                        Craft a cohesive brand voice and messaging strategy for
+                        effective communication.
+                      </li>
+                      <li>
+                        Apply branding principles to various marketing channels,
+                        both digital and traditional.
+                      </li>
+                      <li>
+                        Analyze real-world brand identity case studies and apply
+                        lessons learned to their own projects.
+                      </li>
+                    </ul>
+
+                    <h2>Prerequisites:</h2>
+                    <p>
+                      No prior design experience is required for this course.
+                      Participants should have a basic understanding of
+                      marketing concepts and a willingness to engage in creative
+                      activities.
+                    </p>
+
+                    <h2>Assessment and Certification:</h2>
+                    <p>
+                      Participants will be evaluated through quizzes,
+                      assignments, and a final project where they will design a
+                      brand identity for a fictional business. Upon successful
+                      completion of the course, participants will receive a
+                      certificate of completion.
+                    </p>
+                  </div>
+                </ul>
+              </div>
+
+              <div
+                :id="$id(tabId + '-content')"
+                x-show="tabContentActive($el)"
+                class="relative"
+                x-cloak>
+                <ul class="" role="list">
+                  <div class="mt-12">
+                    <h3 class="text-white text-xl lg:text-2xl">
+                      Customer Reviews
+                    </h3>
+
+                    <div class="flex space-x-4 text-sm text-vanta-300">
+                      <div class="flex-none py-10">
+                        <img
+                          src="/avatars/head7.svg"
+                          alt=""
+                          class="h-16 p-2 w-16 rounded-full ring-1 ring-white/10"
+                        />
+                      </div>
+                      <div class="py-10">
+                        <h3 class="text-lg font-display text-white lg:text-xl">
+                          Sarah Martinez
+                        </h3>
+                        <p>
+                          <time datetime="2023-08-16">August 16, 2023</time>
+                        </p>
+
+                        <div class="mt-4 flex items-center">
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state:on="Active"
+                            x-state:off="Default"
+                            x-state-description='Active: "text-white", Default: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <p class="sr-only">5 out of 5 stars</p>
+
+                        <div
+                          class="prose prose-sm mt-4 max-w-none text-vanta-300">
+                          <p>
+                            "As a marketing professional, I was seeking a course
+                            that would help me understand the nuances of brand
+                            identity design. This course exceeded my
+                            expectations! The content is structured beautifully,
+                            and the real-world case studies provided practical
+                            insights. I now feel confident in crafting visually
+                            appealing and strategically aligned brand
+                            identities. Highly recommended!"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex space-x-4 text-sm text-vanta-300">
+                      <div class="flex-none py-10">
+                        <img
+                          src="/avatars/head1.svg"
+                          alt=""
+                          class="h-16 p-2 w-16 rounded-full ring-1 ring-white/10"
+                        />
+                      </div>
+                      <div class="py-10 border-t border-vanta-800">
+                        <h3 class="text-lg font-display text-white lg:text-xl">
+                          John Anderson
+                        </h3>
+                        <p>
+                          <time datetime="2023-08-12">August 12, 2023</time>
+                        </p>
+
+                        <div class="mt-4 flex items-center">
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state:on="Active"
+                            x-state:off="Default"
+                            x-state-description='Active: "text-white", Default: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <p class="sr-only">5 out of 5 stars</p>
+
+                        <div
+                          class="prose prose-sm mt-4 max-w-none text-vanta-300">
+                          <p>
+                            "I'm an entrepreneur with a small business, and this
+                            course was a game-changer for me. The lessons on
+                            color psychology and typography alone were worth it.
+                            The instructor's explanations are clear, and the
+                            hands-on exercises helped me apply what I learned.
+                            My brand's visual identity has improved drastically,
+                            thanks to this course."
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex space-x-4 text-sm text-vanta-300">
+                      <div class="flex-none py-10">
+                        <img
+                          src="/avatars/head8.svg"
+                          alt=""
+                          class="h-16 p-2 w-16 rounded-full ring-1 ring-white/10"
+                        />
+                      </div>
+                      <div class="py-10 border-t border-vanta-800">
+                        <h3 class="text-lg font-display text-white lg:text-xl">
+                          Emily Carter
+                        </h3>
+                        <p><time datetime="2023-08-06">August 6, 2023</time></p>
+
+                        <div class="mt-4 flex items-center">
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state:on="Active"
+                            x-state:off="Default"
+                            x-state-description='Active: "text-white", Default: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-white h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <svg
+                            class="text-vanta-300 h-5 w-5 flex-shrink-0"
+                            x-state-description='undefined: "text-white", undefined: "text-vanta-300"'
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                              fill-rule="evenodd"
+                              d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <p class="sr-only">4 out of 5 stars</p>
+
+                        <div
+                          class="prose prose-sm mt-4 max-w-none text-vanta-300">
+                          <p>
+                            "I've always been intrigued by design, but I'm not a
+                            designer by trade. This course made brand identity
+                            design accessible and enjoyable. The course
+                            materials are well-organized, and the assignments
+                            were engaging. I loved learning how to create a
+                            cohesive brand voice and design elements. This
+                            course has inspired me to explore design further!"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,27 +1,178 @@
+---
+import FeatureFour from "../features/FeatureFour.astro";
+---
+
 <section>
-  <div class="px-8 md:px-12 max-w-6xl mx-auto py-32 2xl:max-w-7xl items-center">
-    <div class="max-w-xl mx-auto text-center">
-      <p class="text-4xl font-display font-semibold tracking-tight text-black">
-        About
+  <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56">
+    <div class="text-center">
+      <h1
+        class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 lg:text-6xl">
+        The mission <span class="lg:block">behind Vanta.</span>
+      </h1>
+      <p class="max-w-xs mt-4 text-vanta-300 mx-auto">
+        Your pathway to exploring brand & identity design for marketers online
       </p>
-      <p class="mt-4 text-lg tracking-tight text-gray-600">
-        A full width entry to use as a header
-      </p>
+
+      <div
+        class="grid grid-cols-2 mt-12 sm:grid-cols-4 lg:grid-cols-4 justify-between text-center -ml-4">
+        <p><img class="mx-auto" src="/brands/1.svg" alt="" /></p>
+        <p><img class="mx-auto" src="/brands/2.svg" alt="" /></p>
+        <p><img class="mx-auto" src="/brands/3.svg" alt="" /></p>
+        <p><img class="mx-auto" src="/brands/4.svg" alt="" /></p>
+      </div>
+    </div>
+    <div class="lg:grid lg:grid-cols-4 mt-12 gap-2 hidden">
+      <div>
+        <div
+          class="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500 lg:rotate-6">
+          <img
+            class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
+            src="/avatars/head2.svg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500 lg:-rotate-12">
+          <img
+            class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
+            src="/avatars/head4.svg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500 lg:-rotate-12">
+          <img
+            class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
+            src="/avatars/head6.svg"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 lg: rotate-12 hover:rotate-0 duration-500">
+          <img
+            class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
+            src="/avatars/head1.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <dl
+      class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3 py-24">
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="leading-7 text-vanta-300">Students</dt>
+        <dd
+          class="order-first text-3xl font-semibold tracking-tight text-white font-display sm:text-5xl">
+          8000+
+        </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="leading-7 text-vanta-300">Courses</dt>
+        <dd
+          class="order-first text-3xl font-semibold tracking-tight text-white font-display sm:text-5xl">
+          200+
+        </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="leading-7 text-vanta-300">Teachers</dt>
+        <dd
+          class="order-first text-3xl font-semibold tracking-tight text-white font-display sm:text-5xl">
+          50+
+        </dd>
+      </div>
+    </dl>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
+      <div>
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2">
+          Learn about us
+        </h1>
+        <p class="max-w-xs mt-4 text-vanta-300">
+          Elevate your skills in brand identity design with our comprehensive
+          e-learning platform. Dive into the world of branding and discover the
+          art of creating impactful identities that resonate with your audience.
+        </p>
+      </div>
+      <div
+        class="lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 duration-500">
+        <img
+          class="w-full ring-1 ring-white/10 rounded-2xl shadow-massive"
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        />
+      </div>
     </div>
 
+    <ul
+      class="grid grid-cols-1 gap-6 mt-12 list-none md:grid-cols-3 md:gap-12"
+      role="list">
+      <li>
+        <p class="text-lg font-display text-white lg:text-xl">
+          1. Make Education Accessible
+        </p>
+        <p class="mt-2 text-sm text-vanta-300">
+          Dive into the world of branding and discover the art of creating
+          impactful identities that resonate with your audience.
+        </p>
+      </li>
+      <li>
+        <p class="text-lg font-display text-white lg:text-xl">
+          2. Help you Grow
+        </p>
+        <p class="mt-2 text-sm text-vanta-300">
+          Embark on a tailored educational journey, with courses curated to
+          match your interests, goals, and learning pace.
+        </p>
+      </li>
+      <li>
+        <p class="text-lg font-display text-white lg:text-xl">
+          3. Grow a Community
+        </p>
+        <p class="mt-2 text-sm text-vanta-300">
+          At our e-learning platform, our mission is to empower individuals from
+          all walks of life with the skills and knowledge.
+        </p>
+      </li>
+    </ul>
+    <div class="mt-24">
+      <h1
+        class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2">
+        Contact us
+      </h1>
+    </div>
     <div
-      class="prose max-w-3xl py-24 mx-auto prose-slate font-serif prose-headings:font-sans first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-3 first-letter:float-left prose-blockquote:border-l-salmon-500 prose-headings:text-black prose-li:marker:text-salmon-500">
-      <p>
-        Computers used to be magical. But much of that magic has been lost over
-        time, replaced by subpar tools and practices that slow teams down and
-        hold great work back. Frustrated with building and managing software
-        projects in high-growth companies ourselves, we founded a company to
-        build something better. We named it Linear to signify progress.
-        Productivity software should be opinionated. It's the only way the
-        product can truly do the heavy lifting for you. Flexible software lets
-        everyone invent their own workflows, which eventually creates chaos as
-        teams scale.
-      </p>
+      class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 leading-7 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+      <div>
+        <h3 class="text-lg font-display text-white lg:text-xl">Los Angeles</h3>
+        <address class="pt-2 not-italic text-xs text-vanta-300">
+          <p>4556 Brendan Ferry</p>
+          <p>Los Angeles, CA 90210</p>
+        </address>
+      </div>
+      <div>
+        <h3 class="text-lg font-display text-white lg:text-xl">New York</h3>
+        <address class="pt-2 not-italic text-xs text-vanta-300">
+          <p>886 Walter Street</p>
+          <p>New York, NY 12345</p>
+        </address>
+      </div>
+      <div>
+        <h3 class="text-lg font-display text-white lg:text-xl">Toronto</h3>
+        <address class="pt-2 not-italic text-xs text-vanta-300">
+          <p>7363 Cynthia Pass</p>
+          <p>Toronto, ON N3Y 4H8</p>
+        </address>
+      </div>
+      <div>
+        <h3 class="text-lg font-display text-white lg:text-xl">London</h3>
+        <address class="pt-2 not-italic text-xs text-vanta-300">
+          <p>114 Cobble Lane</p>
+          <p>London N1 2EF</p>
+        </address>
+      </div>
     </div>
   </div>
 </section>
+<FeatureFour />

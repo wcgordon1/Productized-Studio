@@ -1,0 +1,419 @@
+---
+import { courses } from "../../data/courses.json";
+---
+
+<section>
+  <div
+    class="absolute bg-gradient-to-r from-vanta-50 via-vanta-200 to-vanta-600 h-42 right-32 top-64 w-32 lg:w-96 lg:h-96 opacity-50 rounded-lg ml-auto inset-x-0 blur-3xl justify-center">
+  </div>
+  <div
+    class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-12">
+    <div class="max-w-2xl">
+      <div class="text-left">
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 lg:text-6xl">
+          Explore our diverse course offerings
+        </h1>
+        <p class="max-w-xs mt-4 text-vanta-300">
+          Embark on a learning journey tailored to your interests and goals
+        </p>
+        <div class="flex flex-wrap items-center mt-8">
+          <div>
+            <label class="sr-only" for="search">Quick search</label><div
+              class="relative flex items-center">
+              <input
+                class="w-full h-10 px-4 py-2 placeholder-vanta-300 duration-200 ring-1 ring-inset border-transparent ring-white/10 rounded-lg appearance-none bg-card focus:border-vanta-300 focus:outline-none focus:ring-vanta-300 sm:text-sm text-white lock pr-14"
+                id="search"
+                name="search"
+                type="text"
+              /><div class="flex absolute inset-y-0 pr-1.5 py-1.5 right-0">
+                <kbd
+                  class="items-center inline-flex border-vanta-200 font-sans px-0.5 rounded text-white text-xs"
+                  >⌘K</kbd
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      x-data="{
+        tabSelected: 1,
+        tabId: $id('tabs'),
+        tabButtonClicked(tabButton){
+            this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+            this.tabRepositionMarker(tabButton);
+        },
+        tabRepositionMarker(tabButton){
+            this.$refs.tabMarker.style.width=tabButton.offsetWidth + 'px';
+            this.$refs.tabMarker.style.height=tabButton.offsetHeight + 'px';
+            this.$refs.tabMarker.style.left=tabButton.offsetLeft + 'px';
+        },
+        tabContentActive(tabContent){
+            return this.tabSelected == tabContent.id.replace(this.tabId + '-content-', '');
+        },
+        tabButtonActive(tabContent){
+            const tabId = tabContent.id.split('-').slice(-1);
+            return this.tabSelected == tabId;
+        }
+    }"
+      x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
+      class="relative w-full mt-12">
+      <div
+        x-ref="tabButtons"
+        class="relative inline-grid text-white items-center justify-center w-full h-12 grid-cols-3 select-none ring-1 ring-white/10 p-2 bg-card/80 px-2 rounded-lg">
+        <button
+          :id="$id(tabId)"
+          @click="tabButtonClicked($el);"
+          type="button"
+          :class="{ ' ' : tabButtonActive($el) }"
+          class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+          >UI/UX</button
+        >
+        <button
+          :id="$id(tabId)"
+          @click="tabButtonClicked($el);"
+          type="button"
+          :class="{ ' ' : tabButtonActive($el) }"
+          class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+          >Development</button
+        >
+        <button
+          :id="$id(tabId)"
+          @click="tabButtonClicked($el);"
+          type="button"
+          :class="{ ' ' : tabButtonActive($el) }"
+          class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+          >Graphic Design</button
+        >
+        <div
+          x-ref="tabMarker"
+          class="absolute left-0 z-10 w-1/2 h-8 duration-300 ease-out"
+          x-cloak>
+          <div
+            class="w-full h-8 bg-card/80 backdrop-blur-2xl rounded-md shadow-massive ring-1 ring-white/10">
+          </div>
+        </div>
+      </div>
+      <div class="relative flex items-center justify-center w-full mt-4">
+        <div
+          :id="$id(tabId + '-content')"
+          x-show="tabContentActive($el)"
+          class="relative">
+          <ul
+            class="grid grid-cols-1 list-none md:grid-cols-3 gap-2 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+            role="list">
+            {
+              courses.slice(0, 3).map((template) => (
+                <>
+                  <li class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+                    <div>
+                      <div class="inline-flex justify-between items-center gap-4 w-full">
+                        <div>
+                          <img
+                            class="inline-block w-24 h-24 rounded-full  ring-1 ring-vanta-800 shrink-0"
+                            src={template.avatar}
+                            alt={template.description}
+                          />
+                        </div>
+                        <div class="order-first">
+                          <span class="inline-flex items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                            {template.tag}
+                          </span>
+                          <p class="text-lg mt-2 font-display text-white lg:text-xl">
+                            {template.title}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="inline-flex  mt-8 items-center gap-2 w-full">
+                        <div>
+                          <span class="inline-flex gap-2 items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon icon-tabler icon-tabler-school h-4 w-4"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.25"
+                              stroke="currentColor"
+                              fill="none"
+                              stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                              <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                              <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                            </svg>
+                            <span>{template.teacher}</span>
+                          </span>
+                        </div>
+                        <div>
+                          <p class="inline-flex gap-2 items-center rounded-md px-2 py-1 text-xs text-white">
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-star fill-white"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.25"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                              </svg>
+                            </span>
+                            <span>{template.rating}</span>
+                          </p>
+                        </div>
+                      </div>
+
+                      <p class="mt-8 text-sm text-vanta-300">
+                        {template.description}
+                      </p>
+                    </div>
+
+                    <div class="inline-flex mt-24 justify-between items-center gap-4 w-full pt-2">
+                      <div>
+                        <p class="text-white text-2xl">
+                          <span>{template.pricing}</span>
+                        </p>
+                      </div>
+                      <div>
+                        <a
+                          href={template.url}
+                          class="rounded-lg px-4 py-2 text-xs font-normal transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-8 ring-1 ring-inset ring-white/10">
+                          Enroll Now
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div
+          :id="$id(tabId + '-content')"
+          x-show="tabContentActive($el)"
+          class="relative"
+          x-cloak>
+          <ul
+            class="grid grid-cols-1 list-none md:grid-cols-3 gap-2 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+            role="list">
+            {
+              courses.slice(3, 6).map((template) => (
+                <>
+                  <li class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+                    <div>
+                      <div class="inline-flex justify-between items-center gap-4 w-full">
+                        <div>
+                          <img
+                            class="inline-block w-24 h-24 rounded-full  ring-1 ring-vanta-800 shrink-0"
+                            src={template.avatar}
+                            alt={template.description}
+                          />
+                        </div>
+                        <div class="order-first">
+                          <span class="inline-flex items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                            {template.tag}
+                          </span>
+                          <p class="text-lg mt-2 font-display text-white lg:text-xl">
+                            {template.title}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="inline-flex  mt-8 items-center gap-2 w-full">
+                        <div>
+                          <span class="inline-flex gap-2 items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon icon-tabler icon-tabler-school h-4 w-4"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.25"
+                              stroke="currentColor"
+                              fill="none"
+                              stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                              <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                              <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                            </svg>
+                            <span>{template.teacher}</span>
+                          </span>
+                        </div>
+                        <div>
+                          <p class="inline-flex gap-2 items-center rounded-md px-2 py-1 text-xs text-white">
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-star fill-white"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.25"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                              </svg>
+                            </span>
+                            <span>{template.rating}</span>
+                          </p>
+                        </div>
+                      </div>
+
+                      <p class="mt-8 text-sm text-vanta-300">
+                        {template.description}
+                      </p>
+                    </div>
+
+                    <div class="inline-flex mt-24 justify-between items-center gap-4 w-full pt-2">
+                      <div>
+                        <p class="text-white text-2xl">
+                          <span>{template.pricing}</span>
+                        </p>
+                      </div>
+                      <div>
+                        <a
+                          href={template.url}
+                          class="rounded-lg px-4 py-2 text-xs font-normal transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-8 ring-1 ring-inset ring-white/10">
+                          Enroll Now
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div
+          :id="$id(tabId + '-content')"
+          x-show="tabContentActive($el)"
+          class="relative"
+          x-cloak>
+          <ul
+            class="grid grid-cols-1 list-none md:grid-cols-3 gap-2 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+            role="list">
+            {
+              courses.slice(6, 9).map((template) => (
+                <>
+                  <li class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+                    <div>
+                      <div class="inline-flex justify-between items-center gap-4 w-full">
+                        <div>
+                          <img
+                            class="inline-block w-24 h-24 rounded-full  ring-1 ring-vanta-800 shrink-0"
+                            src={template.avatar}
+                            alt={template.description}
+                          />
+                        </div>
+                        <div class="order-first">
+                          <span class="inline-flex items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                            {template.tag}
+                          </span>
+                          <p class="text-lg mt-2 font-display text-white lg:text-xl">
+                            {template.title}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="inline-flex  mt-8 items-center gap-2 w-full">
+                        <div>
+                          <span class="inline-flex gap-2 items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="icon icon-tabler icon-tabler-school h-4 w-4"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.25"
+                              stroke="currentColor"
+                              fill="none"
+                              stroke-linecap="round"
+                              stroke-linejoin="round">
+                              <path
+                                stroke="none"
+                                d="M0 0h24v24H0z"
+                                fill="none"
+                              />
+                              <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                              <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                            </svg>
+                            <span>{template.teacher}</span>
+                          </span>
+                        </div>
+                        <div>
+                          <p class="inline-flex gap-2 items-center rounded-md px-2 py-1 text-xs text-white">
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-star fill-white"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.25"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                              </svg>
+                            </span>
+                            <span>{template.rating}</span>
+                          </p>
+                        </div>
+                      </div>
+
+                      <p class="mt-8 text-sm text-vanta-300">
+                        {template.description}
+                      </p>
+                    </div>
+
+                    <div class="inline-flex mt-24 justify-between items-center gap-4 w-full pt-2">
+                      <div>
+                        <p class="text-white text-2xl">
+                          <span>{template.pricing}</span>
+                        </p>
+                      </div>
+                      <div>
+                        <a
+                          href={template.url}
+                          class="rounded-lg px-4 py-2 text-xs font-normal transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-8 ring-1 ring-inset ring-white/10">
+                          Enroll Now
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

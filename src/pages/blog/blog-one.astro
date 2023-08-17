@@ -43,18 +43,54 @@ import { AstroSeo } from "@astrolib/seo";
 />
 <BaseLayout>
   <section>
-    <div class="px-8 md:px-12 mx-auto max-w-7xl py-12 lg:py-32">
-      <ol role="list" class="flex flex-wrap gap-3">
-        {
-          tags.map((tag) => (
-            <li class="inline-flex items-center border rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ">
-              <a href={`/tags/${tag}`}>{tag}</a>
-            </li>
-          ))
-        }
-      </ol>
+    <div
+      class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-56">
+      <div>
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+          Unleash your potential
+          <span class="lg:block"> through seamless online learning</span>
+        </h1>
+        <p class="max-w-xl mt-4 text-vanta-300">
+          Discover a boundless realm of knowledge and personal growth, all
+          conclaiently accessible right at your fingertips
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-4 mt-12 gap-8">
+        <div class="flex flex-wrap items-center">
+          <div>
+            <label class="sr-only" for="search">Quick search</label><div
+              class="relative flex items-center">
+              <input
+                class="w-full h-10 px-4 py-2 placeholder-vanta-300 duration-200 ring-1 ring-inset border-transparent ring-white/10 rounded-lg appearance-none bg-card focus:border-vanta-300 focus:outline-none focus:ring-vanta-300 sm:text-sm text-white lock pr-14"
+                id="search"
+                name="search"
+                type="text"
+              /><div class="flex absolute inset-y-0 pr-1.5 py-1.5 right-0">
+                <kbd
+                  class="items-center inline-flex border-vanta-200 font-sans px-0.5 rounded text-white text-xs"
+                  >⌘K</kbd
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol
+          role="list"
+          class="flex flex-wrap gap-3 lg:col-span-3 lg:ml-auto items-center">
+          {
+            tags.map((tag) => (
+              <li
+                class="rounded-lg text-xs px-4 py-1
+                transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-6 ring-1 ring-inset ring-white/10">
+                <a href={`/tags/${tag}`}>{tag}</a>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
       <ul
-        class="grid grid-cols-1 mt-12 lg:grid-cols-3 sm:grid-cols-2 gap-x-3 gap-y-24 lg:gap-x-6">
+        class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
         {
           allPosts
             .slice()

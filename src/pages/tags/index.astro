@@ -8,11 +8,48 @@ const pageTitle = "Tag Index";
 
 <BaseLayout pageTitle={pageTitle}>
   <section>
-    <div class="px-8 md:px-12 mx-auto max-w-7xl py-12 lg:py-32">
-      <ol role="list" class="flex flex-wrap gap-3">
+    <div
+      class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-56">
+      <div>
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+          All tags for latest tech news.
+        </h1>
+        <p class="max-w-xl mt-4 text-vanta-300">
+          Discover a boundless realm of knowledge and personal growth, all
+          conclaiently accessible right at your fingertips
+        </p>
+        <form
+          action=""
+          method="post"
+          id="#"
+          name="#"
+          target="_blank"
+          class="p-2 mt-8 transition duration-500 ease-in-out transform lg:border border-white/10 lg:bg-vanta-800 shadow-big rounded-xl sm:max-w-lg sm:flex">
+          <div class="flex-1 min-w-0 border-b lg:border-0 border-vanta-700">
+            <label for="member_email" class="sr-only">Email address</label>
+            <input
+              autofocus=""
+              id="cta-email"
+              type="email"
+              class="block w-full px-5 py-2 placeholder-vanta-300 transition duration-500 ease-in-out transform bg-transparent border text-sm border-transparent rounded-lg text-white focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white h-10 focus:ring-offset-2 focus:ring-offset-card"
+              placeholder="Enter your best email..."
+            />
+          </div>
+          <div class="mt-4 sm:mt-0 sm:ml-3">
+            <button
+              class="flex items-center justify-center h-10 px-4 py-2 text-sm text-black transition-all rounded-lg hover:to-vanta-600 bg-gradient-to-b from-vanta-300 via-vanta-400 to-vanta-500"
+              >Subscribe me</button
+            >
+          </div>
+        </form>
+      </div>
+      <ol role="list" class="flex flex-wrap gap-3 mt-12">
         {
           tags.map((tag) => (
-            <li class="inline-flex items-center border rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ">
+            <li
+              class="rounded-lg text-xs px-4 py-1
+                transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-6 ring-1 ring-inset ring-white/10">
               <a href={`/tags/${tag}`}>{tag}</a>
             </li>
           ))

@@ -1,0 +1,58 @@
+---
+import { teachers } from "../../data/teachers.json";
+---
+<section>
+  <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-24">
+    <div>
+      <h1
+        class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+        Meet our Teachers.
+      </h1>
+      <p class="max-w-xl mt-4 text-vanta-300">
+        Guiding you through the world of brand & identity design
+      </p>
+    </div>
+    <ul
+      class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+      role="list">
+      {
+        teachers.map((template) => (
+          <>
+            <li class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+              <div>
+                <div class="inline-flex  items-center gap-4 w-full">
+                  <div class="rounded-full  ring-1 ring-vanta-800 h-16 w-16 inline-flex items-center">
+                    <img
+                      class="inline-block w-12 h-12 mx-auto  shrink-0"
+                      src={template.avatar}
+                      alt={template.description}
+                    />
+                  </div>
+                  <div>
+                    <p class="text-lg  font-display text-white lg:text-xl">
+                      {template.teacher}
+                    </p>
+                     <p class="text-xs  font-display text-vanta-300">
+                      {template.profession}
+                    </p>
+                  </div>
+                </div>
+                <p class="mt-8 text-sm text-vanta-300">
+                  {template.description}
+                </p>
+              </div>
+              <div class="inline-flex mt-12 justify-between items-center gap-4 w-full pt-2">
+                <a
+                  href={template.url}
+                  class="rounded-lg px-4 py-2 text-xs font-normal transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-8 ring-1 ring-inset ring-white/10 w-full">
+                  View  {template.teacher}'s' profile
+                </a>
+                <div>
+              </div>
+            </li>
+          </>
+        ))
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+import { testimonials } from "../../data/testimonials.json";
+---
+
+<section class="relative overflow-hidden">
+  <img
+    class="absolute blur-3xl w-96 inset-x-0 h-96 mx-auto bottom-32 left-0"
+    src="/avatars/avatar1.svg"
+    alt=""
+  />
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24 relative">
+    <div class="max-w-2xl mx-auto text-center">
+      <p
+        class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+        A skill building <span class="lg:block">journey with Vanta</span>
+      </p>
+      <p class="text-vanta-300 mt-4 max-w-sm mx-auto">
+        Read how vanta helped master news skills
+      </p>
+    </div>
+
+    <ol
+      role="list"
+      class="grid grid-cols-1 gap-3 mt-12 sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
+      {
+        testimonials.map((template) => (
+          <>
+            <li class="ring-white/10 ring-1 p-2 bg-gradient-to-t from-white/20 rounded-3xl">
+              <div class="h-full p-8  ring-1 ring-white/10 rounded-2xl lg:p-10 shadow-massive bg-card/80">
+                <div class="flex flex-col justify-between h-full">
+                  <div>
+                    <div class="flex-shrink-0 block">
+                      <div class="flex items-center">
+                        <div>
+                          <img
+                            class="inline-block w-12 h-12 rounded-full  ring-1 ring-vanta-800 shrink-0"
+                            src={template.avatar}
+                            alt={template.feedback}
+                          />
+                        </div>
+                        <div class="ml-3">
+                          <p class="text-sm font-display text-white">
+                            {template.student}
+                          </p>
+                          <p class="     text-vanta-300">{template.grade}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class=" text-sm text-vanta-300 mt-12">
+                      " {template.feedback}"
+                    </p>
+                  </div>
+                  <p class="text-sm mt-12 font-display text-white">
+                    {template.course}
+                  </p>
+                </div>
+              </div>
+            </li>
+          </>
+        ))
+      }
+    </ol>
+  </div>
+</section>

@@ -92,26 +92,29 @@ module.exports = {
       ],
     },
     extend: {
-
+      boxShadow: {
+        big: "0px 7px 32px rgb(0 0 0 / 35%);",
+        massive: "0px 64px 64px rgba(0, 0, 0, 0.25), 0px 32px 32px rgba(0, 0, 0, 0.25), 0px 16px 16px rgba(0, 0, 0, 0.25), 0px 8px 8px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);",
+      },
       colors: {
-
-        blue: {
-         50: "#EBEBFF",
-      100: "#D2D2FE",
-      200: "#A6A4FE",
-      300: "#7E7CFD",
-      400: "#524FFD",
-      500: "#2522FC",
-      600: "#0703E2",
-      700: "#0502AB",
-      800: "#03026F",
-      900: "#020137",
-      950: "#01001E"
-        },
+        card:"#131313",        vanta: {
+   50: "hsla(0, 0%, 95%, 1)",
+  100: "hsla(0, 0%, 89%, 1)",
+  200: "hsla(0, 0%, 78%, 1)",
+  300: "hsla(0, 0%, 67%, 1)",
+  400: "hsla(0, 0%, 56%, 1)",
+  500: "hsla(0, 0%, 45%, 1)",
+  600: "hsla(0, 0%, 34%, 1)",
+  700: "hsla(0, 0%, 24%, 1)",
+  800: "hsla(0, 0%, 13%, 1)",
+  900: "hsla(0, 0%, 1%, 1)",
+  950: "hsla(0, 0%, 1%, 1)",
+},
       },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+        display: ["Syne", ...defaultTheme.fontFamily.sans],
+         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+        mono: ["Syne Mono", ...defaultTheme.fontFamily.mono],
       },
     },
   },
