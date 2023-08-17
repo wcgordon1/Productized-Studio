@@ -91,6 +91,8 @@ module.exports = {
         },
       ],
     },
+
+    
     extend: {
       boxShadow: {
         big: "0px 7px 32px rgb(0 0 0 / 35%);",
