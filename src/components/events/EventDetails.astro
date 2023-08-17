@@ -1,29 +1,26 @@
----
-import { coursevideos } from "../../data/coursevideos.json";
----
 
 <section>
   <div
-    class="px-8 py-24 flex flex-col mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:flex">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+    class="flex flex-col px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:flex">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
       <div class="max-w-2xl">
         <p
-          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-3xl font-normal font-display tracking-tight pb-2">
+          class="pb-2 text-3xl font-normal tracking-tight text-transparent bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text font-display">
           Brand Identity Workshop: <span class="lg:block"
             >Crafting Memorable Brands</span
           >
         </p>
-        <p class="text-vanta-300 mt-4 max-w-sm">
+        <p class="max-w-sm mt-4 text-vanta-300">
           Uncover the art of designing brand identities that leave a lasting
           impression. Join us for a hands-on workshop where you'll learn the
           essentials of logo design, color psychology, and typography for
           effective branding.
         </p>
-        <ul class="list-none text-vanta-300 gap-2 mt-4 flex flex-col">
+        <ul class="flex flex-col gap-2 mt-4 list-none text-vanta-300">
           <li class="inline-flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+              class="w-4 h-4 icon icon-tabler icon-tabler-discount-check"
               viewBox="0 0 24 24"
               stroke-width="2"
               stroke="currentColor"
@@ -40,7 +37,7 @@ import { coursevideos } from "../../data/coursevideos.json";
           <li class="inline-flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+              class="w-4 h-4 icon icon-tabler icon-tabler-discount-check"
               viewBox="0 0 24 24"
               stroke-width="2"
               stroke="currentColor"
@@ -57,7 +54,7 @@ import { coursevideos } from "../../data/coursevideos.json";
         </ul>
       </div>
       <div
-        class="ring-1 ring-white/10 p-2 rounded-3xl bg-gradient-to-t from-white">
+        class="p-2 ring-1 ring-white/10 rounded-3xl bg-gradient-to-t from-white">
         <div
           x-data="{
             sources: {
@@ -202,7 +199,7 @@ import { coursevideos } from "../../data/coursevideos.json";
           x-ref="videoContainer"
           @mouseleave="mouseleave=true"
           @mousemove="mousemoveVideo"
-          class="relative mx-auto h-full overflow-hidden shadow-massive aspect-video ring-1 ring-white/10 rounded-xl aspect-video">
+          class="relative h-full mx-auto overflow-hidden shadow-massive aspect-video ring-1 ring-white/10 rounded-xl">
           <video
             x-ref="player"
             @loadedmetadata="metaDataLoaded"
@@ -220,7 +217,7 @@ import { coursevideos } from "../../data/coursevideos.json";
             <div
               x-ref="videoBackground"
               @click="togglePlay()"
-              class="absolute inset-0 z-30 flex items-center justify-center w-full h-full bg-opacity-0 cursor-pointer bg-white group">
+              class="absolute inset-0 z-30 flex items-center justify-center w-full h-full bg-white bg-opacity-0 cursor-pointer group">
               <div
                 x-show="playing"
                 x-transition:enter="transition ease-out duration-1000"
