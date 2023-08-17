@@ -1,0 +1,66 @@
+---
+import { faq } from "../../data/faq.json";
+---
+
+
+<section>
+  <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <div>
+        <h1
+          class="pb-2 text-4xl font-normal tracking-tight text-transparent bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text font-display lg:text-6xl">
+          Frequently <span class="block">asked</span> <span class="block">questions</span>
+        </h1>
+        <p class="max-w-xs mt-4 text-vanta-300">
+         Get answers to common queries about our Brand & Identity Design course. If you have more questions, feel free to contact us.
+        </p>
+      </div>
+      <div
+        x-data="{
+        activeAccordion: '',
+        setActiveAccordion(id) {
+            this.activeAccordion = (this.activeAccordion == id) ? '' : id
+        }
+    }"
+        class="relative w-full mx-auto space-y-2 text-base">
+        {
+          faq.map((template) => (
+            <>
+              <div
+          x-data="{ id: $id('accordion') }"
+          :class="{ 'border-vanta-200/60 text-white' : activeAccordion==id, 'border-transparent text-vanta-300 hover:text-white' : activeAccordion!=id }"
+          class="duration-200 ease-out cursor-pointer group"
+          x-cloak>
+          <button
+            @click="setActiveAccordion(id)"
+            class="flex items-center justify-between w-full text-lg text-white select-none font-display">
+            <span>{template.question}</span>
+            <div
+              :class="{ 'rotate-90': activeAccordion==id }"
+              class="relative flex items-center justify-center w-2.5 h-2.5 duration-300 ease-out">
+              <div
+                class="absolute w-0.5 h-full bg-white group-hover:bg-vanta-300 rounded-full">
+              </div>
+              <div
+                :class="{ 'rotate-90': activeAccordion==id }"
+                class="absolute w-full h-0.5 ease duration-500 bg-white group-hover:bg-vanta-300 rounded-full">
+              </div>
+            </div>
+          </button>
+          <div x-show="activeAccordion==id" x-collapse x-cloak>
+            <div class="pt-0 pb-8 opacity-70">
+             {template.answer}
+
+
+            </div>
+          </div>
+        </div>
+            </>
+          ))
+        }
+
+
+      </div>
+    </div>
+  </div>
+</section>
