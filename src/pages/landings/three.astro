@@ -1,16 +1,64 @@
 ---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeroThree from "@/components/heros/HeroThree.astro";
 import FeatureFive from "@/components/features/FeatureFive.astro";
-import CoursePreviewThree from "@/components/courses/CoursePreviewThree.astro";
+import EntriesThree from "@/components/courses/EntriesThree.astro";
 import FeatureSix from "@/components/features/FeatureSix.astro";
 import TestimonialThree from "@/components/testimonials/TestimonialThree.astro";
 import CtaOne from "@/components/ctas/CtaOne.astro";
 ---
+
 <BaseLayout>
   <HeroThree />
   <FeatureFive />
-  <CoursePreviewThree />
+  <section>
+    <div
+      class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-48 plg:b-24">
+      <div
+        class="ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 items-center p-8 lg:p-10 gap-12 ring-white/10 ring-1 rounded-2xl bg-card/80 shadow-massive">
+          <div>
+            <p
+              class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+              Explore our most <span class="lg:block">popular courses</span>
+            </p>
+            <p class="text-vanta-300 mt-4 max-w-sm">
+              Dive into courses loved by learners worldwide
+            </p>
+            <div class="flex mt-12">
+              <a
+                href="/courses/all-courses-two"
+                class="rounded-lg px-4 py-2 text-sm transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-10 ring-1 ring-inset ring-white/10"
+                >See all our courses</a
+              >
+            </div>
+          </div>
+          <div class="relative">
+            <ul
+              class="flex list-none"
+              role="list">
+              {
+                allPosts.slice(0, 1).map((post) => (
+                  <EntriesThree
+                    url={"/courses/" + post.slug}
+                    courseTtitle={post.data.courseTitle}
+                    intro={post.data.intro}
+                    level={post.data.level}
+                    price={post.data.price}
+                    avatar={post.data.avatar.url}
+                  />
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <FeatureSix />
   <TestimonialThree />
   <CtaOne />

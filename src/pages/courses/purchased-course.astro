@@ -1,7 +1,346 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import PurchasedCourse from "@/components/courses/PurchasedCourse.astro";
+import SubscribeTwo from "@/components/ctas/SubscribeTwo.astro";
+import Video from "@/components/courses/Video.astro";
+const courseVideos = [
+  {
+    time: "5min",
+    title: "1. Course introduction",
+    description:
+      "Welcome to the Brand & Identity Design for Marketers course! In this introductory video, we'll provide an overview of what you can expect from this course, the key concepts we'll be covering, and how this knowledge will benefit you as a marketer",
+  },
+  {
+    time: "7min",
+    title: "2. Branding in marketing",
+    description:
+      "In this video, we'll explore the significance of branding in the world of marketing. Learn how a strong brand identity can establish trust, differentiate your business, and create lasting connections with your audience. ",
+  },
+  {
+    time: "5min",
+    title: "3. Branding identity",
+    description:
+      "Clear up any confusion between brand identity and brand image in this video. We'll discuss the distinctions between these two concepts and how they contribute to the overall perception of a brand. ",
+  },
+];
 ---
 <BaseLayout>
-  <PurchasedCourse />
+  <section>
+    <div
+      class="px-8 py-24 flex flex-col mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:flex">
+      <p
+        class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-5xl">
+        Brand & Identity Design for Marketers
+      </p>
+      <p class="text-vanta-300 mt-4 max-w-sm">
+        Uncover the strategies behind successful digital campaigns, from social
+        media to SEO, and elevate your marketing skills.
+      </p>
+      <ul
+        class="list-none text-vanta-300 gap-2 lg:gap-8 mt-4 flex flex-col lg:flex-row">
+        <li class="inline-flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            ></path>
+            <path
+              d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+            ></path>
+            <path d="M9 12l2 2l4 -4"></path>
+          </svg> Intermediate
+        </li>
+        <li class="inline-flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            ></path>
+            <path
+              d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+            ></path>
+            <path d="M9 12l2 2l4 -4"></path>
+          </svg>6 Videos
+        </li>
+        <li class="inline-flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-discount-check h-4 w-4"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            ></path>
+            <path
+              d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+            ></path>
+            <path d="M9 12l2 2l4 -4"></path>
+          </svg>6hr 25min
+        </li>
+      </ul>
+      <div>
+        <div>
+          <div
+            x-data="{
+      tabSelected: 1,
+      tabId: $id('tabs'),
+      tabButtonClicked(tabButton){
+          this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+          this.tabRepositionMarker(tabButton);
+      },
+      tabRepositionMarker(tabButton){
+          this.$refs.tabMarker.style.width=tabButton.offsetWidth + 'px';
+          this.$refs.tabMarker.style.height=tabButton.offsetHeight + 'px';
+          this.$refs.tabMarker.style.left=tabButton.offsetLeft + 'px';
+      },
+      tabContentActive(tabContent){
+          return this.tabSelected == tabContent.id.replace(this.tabId + '-content-', '');
+      },
+      tabButtonActive(tabContent){
+          const tabId = tabContent.id.split('-').slice(-1);
+          return this.tabSelected == tabId;
+      }
+  }"
+            x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
+            class="relative w-full h-full mt-12">
+            <div
+              x-ref="tabButtons"
+              class="relative inline-grid text-white text-left w-full h-8 grid-cols-3 select-none border-b border-white/10">
+              <button
+                :id="$id(tabId)"
+                @click="tabButtonClicked($el);"
+                type="button"
+                :class="{ ' ' : tabButtonActive($el) }"
+                class="relative z-20 inline-flex w-full h-8 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+                >About curse</button
+              >
+              <button
+                :id="$id(tabId)"
+                @click="tabButtonClicked($el);"
+                type="button"
+                :class="{ ' ' : tabButtonActive($el) }"
+                class="relative z-20 inline-flex w-full h-8 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+                >Videos</button
+              >
+              <div
+                x-ref="tabMarker"
+                class="absolute left-0 z-10 w-12 h-8 duration-300 ease-out"
+                x-cloak>
+                <div class="w-12 h-8 border-b border-white"></div>
+              </div>
+            </div>
+            <div class="relative w-full mt-4">
+              <div
+                :id="$id(tabId + '-content')"
+                x-show="tabContentActive($el)"
+                class="relative">
+                <ul role="list">
+                  <div class="mt-12 prose-styles">
+                    <h2>About the Course:</h2>
+                    <p>
+                      Are you looking to enhance your marketing skills by
+                      mastering the art of brand and identity design? Welcome to
+                      "Brand & Identity Design for Marketers" – a comprehensive
+                      course designed to equip you with the tools and knowledge
+                      needed to create impactful brand identities that resonate
+                      with your audience.
+                    </p>
+                    <p>
+                      Whether you're a seasoned marketer, a budding
+                      entrepreneur, or simply curious about the world of design,
+                      this course offers a unique opportunity to delve into the
+                      world of branding. A strong brand identity is more than
+                      just visuals – it's a strategic asset that communicates
+                      your company's values, differentiates you from
+                      competitors, and fosters trust among customers.
+                    </p>
+                    <p>
+                      Throughout this course, you'll explore the psychology
+                      behind effective branding, learn to craft consistent
+                      visual identities, and discover the art of aligning brand
+                      messaging across various platforms. From designing
+                      memorable logos to selecting the perfect color palette,
+                      you'll acquire practical skills that can elevate your
+                      marketing campaigns to new heights.
+                    </p>
+                    <p>
+                      Our engaging lessons, real-world case studies, and
+                      hands-on exercises will guide you through the entire
+                      process of creating compelling brand identities. By the
+                      end of the course, you'll be prepared to conceptualize,
+                      design, and communicate brand identities that make a
+                      lasting impact in the minds of your target audience.
+                    </p>
+                    <p>
+                      Join us on this creative journey and unlock the secrets to
+                      building brands that not only capture attention but also
+                      build lasting connections. Enroll today and embark on a
+                      transformational learning experience that will elevate
+                      your marketing skills to the next level.
+                    </p>
+                    <h2>Course Overview:</h2>
+                    <p>
+                      Welcome to "Brand & Identity Design for Marketers"! In
+                      this comprehensive course, we will explore the fundamental
+                      principles of creating compelling brand identities that
+                      resonate with your target audience. Whether you're a
+                      marketer, entrepreneur, or aspiring designer, this course
+                      will equip you with the essential knowledge and practical
+                      skills to effectively shape and communicate a brand's
+                      identity.
+                    </p>
+                    <h2>Course Outline:</h2>
+                    <h3>Module 1: Introduction to Brand Identity</h3>
+                    <ul>
+                      <li>Understanding the Role of Branding in Marketing</li>
+                      <li>Differentiating Brand Identity vs. Brand Image</li>
+                      <li>The Psychology Behind Effective Branding</li>
+                    </ul>
+                    <!-- More module sections -->
+                    <h2>Learning Objectives:</h2>
+                    <p>
+                      By the end of this course, participants will be able to:
+                    </p>
+                    <ul>
+                      <li>
+                        Understand the key concepts of brand identity design and
+                        its significance in marketing.
+                      </li>
+                      <li>
+                        Develop a brand's visual identity, including logo,
+                        colors, and typography.
+                      </li>
+                      <li>
+                        Craft a cohesive brand voice and messaging strategy for
+                        effective communication.
+                      </li>
+                      <li>
+                        Apply branding principles to various marketing channels,
+                        both digital and traditional.
+                      </li>
+                      <li>
+                        Analyze real-world brand identity case studies and apply
+                        lessons learned to their own projects.
+                      </li>
+                    </ul>
+                    <h2>Prerequisites:</h2>
+                    <p>
+                      No prior design experience is required for this course.
+                      Participants should have a basic understanding of
+                      marketing concepts and a willingness to engage in creative
+                      activities.
+                    </p>
+                    <h2>Assessment and Certification:</h2>
+                    <p>
+                      Participants will be evaluated through quizzes,
+                      assignments, and a final project where they will design a
+                      brand identity for a fictional business. Upon successful
+                      completion of the course, participants will receive a
+                      certificate of completion.
+                    </p>
+                  </div>
+                </ul>
+              </div>
+              <div
+                :id="$id(tabId + '-content')"
+                x-show="tabContentActive($el)"
+                class="relative"
+                x-cloak>
+                <div class="mt-12 grid lg:grid-cols-2 gap-2 h-full">
+                  {
+                    courseVideos.map((template) => (
+                      <div class="ring-1 ring-inset ring-white/10 bg-gradient-to-t from-white/20 rounded-3xl p-2">
+                        <div class="ring-1 overflow-hidden ring-white/10 bg-card backdrop-blur-2xl rounded-2xl shadow-massive flex flex-col">
+                          <div class="p-4 lg:p-6 relative">
+                            <div class="inline-flex items-center justify-between w-full">
+                              <p class="text-lg font-display text-white lg:text-xl">
+                                {template.title}
+                              </p>
+                              <p class="text-xs text-vanta-300">
+                                {template.time}
+                              </p>
+                            </div>
+                            <p class="mt-2 text-sm text-vanta-300">
+                              {template.description}
+                            </p>
+                            <div
+                              class="mt-8"
+                              x-data="{ modalOpen: false }"
+                              @keydown.escape.window="modalOpen = false"
+                              class="relative z-50 w-auto h-auto">
+                              <button
+                                @click="modalOpen=true"
+                                class="flex items-center justify-center h-10 px-4 py-2 text-sm text-black transition-all rounded-lg hover:to-vanta-600 bg-gradient-to-b from-vanta-300 via-vanta-400 w-full to-vanta-500  disabled:opacity-50 disabled:pointer-events-none">
+                                Open lesson
+                              </button>
+                              <template x-teleport="body">
+                                <div
+                                  x-show="modalOpen"
+                                  class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen"
+                                  x-cloak>
+                                  <div
+                                    x-show="modalOpen"
+                                    x-transition:enter="ease-out duration-300"
+                                    x-transition:enter-start="opacity-0"
+                                    x-transition:enter-end="opacity-100"
+                                    x-transition:leave="ease-in duration-300"
+                                    x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0"
+                                    @click="modalOpen=false"
+                                    class="absolute inset-0 w-full h-full bg-black bg-opacity-40"
+                                  />
+                                  <div
+                                    x-show="modalOpen"
+                                    x-trap.inert.noscroll="modalOpen"
+                                    x-transition:enter="ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                    x-transition:leave="ease-in duration-200"
+                                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                    class="relative w-full p-2 sm:max-w-3xl sm:rounded-lg">
+                                    <div class="ring-1 ring-white/10 p-2 rounded-2xl bg-gradient-to-t from-white">
+                                      <Video />
+                                    </div>
+                                  </div>
+                                </div>
+                              </template>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <SubscribeTwo />
 </BaseLayout>

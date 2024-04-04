@@ -1,288 +1,244 @@
+---
+const pageSections = [
+  {
+    sectionTitle: "All pages",
+    categories: [
+      {
+        categoryName: "Landing pages",
+        links: [
+          {
+            label: "Landing One",
+            href: "/landings/one",
+            title: "link to your page",
+          },
+          {
+            label: "Landing Two",
+            href: "/landings/two",
+            title: "link to your page",
+          },
+          {
+            label: "Landing Three",
+            href: "/landings/three",
+            title: "link to your page",
+          },
+          {
+            label: "About",
+            href: "/infopages/about",
+            title: "link to your page",
+          },
+          { label: "FAQ", href: "/infopages/faq", title: "link to your page" },
+          {
+            label: "Download",
+            href: "/forms/download",
+            title: "link to your page",
+          },
+        ],
+      },
+      {
+        categoryName: "Forms",
+        links: [
+          {
+            label: "Contact",
+            href: "/forms/contact",
+            title: "link to your page",
+          },
+          {
+            label: "Sign In",
+            href: "/forms/signin",
+            title: "link to your page",
+          },
+          {
+            label: "Sign Up",
+            href: "/forms/signup",
+            title: "link to your page",
+          },
+          {
+            label: "Password",
+            href: "/forms/password",
+            title: "link to your page",
+          },
+          {
+            label: "Coming soon",
+            href: "/forms/coming-soon",
+            title: "link to your page",
+          },
+        ],
+      },
+      {
+        categoryName: "Pricing",
+        links: [
+          {
+            label: "Pricing simple",
+            href: "/pricing/pricing-simple",
+            title: "link to your page",
+          },
+          {
+            label: "Pricing tiers",
+            href: "/pricing/pricing-tiers",
+            title: "link to your page",
+          },
+        ],
+      },
+      {
+        categoryName: "System pages",
+        links: [
+          {
+            label: "Style guide",
+            href: "/system/styleguide",
+            title: "link to your page",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    sectionTitle: "Content Collections",
+    categories: [
+      {
+        categoryName: "Blog utilities",
+        links: [
+          {
+            label: "Blog home One",
+            href: "/blog/blog-one",
+            title: "link to your page",
+          },
+          { label: "Blog Post", href: "/posts/1", title: "link to your page" },
+          { label: "Tag index", href: "/tags", title: "link to your page" },
+          { label: "Tag Category", href: "/tags", title: "link to your page" },
+          { label: "RSS", href: "/rss.xml", title: "link to your page" },
+        ],
+      },
+      {
+        categoryName: "Events",
+        links: [
+          {
+            label: "Home",
+            href: "/events/home",
+            title: "link to your page",
+          },
+          {
+            label: "Details",
+            href: "/events/1",
+            title: "link to your page",
+          },
+        ],
+      },
+      {
+        categoryName: "School",
+        links: [
+          {
+            label: "Courses home one",
+            href: "/courses/home-one",
+            title: "link to your page",
+          },
+          {
+            label: "Courses home two",
+            href: "/courses/home-two",
+            title: "link to your page",
+          },
+          {
+            label: "Courses home three",
+            href: "/courses/home-three",
+            title: "link to your page",
+          },
+          {
+            label: "Courses details",
+            href: "/courses/1",
+            title: "link to your page",
+          },
+          {
+            label: "Purchased Course",
+            href: "/courses/purchased-course",
+            title: "link to your page",
+          },
+        ],
+      },
+      {
+        categoryName: "Teachers",
+        links: [
+          {
+            label: "Home",
+            href: "/teachers/home",
+            title: "link to your page",
+          },
+          {
+            label: "Details",
+            href: "/teachers/1",
+            title: "link to your page",
+          },
+        ],
+      },
+      {
+        categoryName: "Utility pages",
+        links: [
+          {
+            label: "DPA",
+            href: "/infopages/terms",
+            title: "link to your page",
+          },
+          {
+            label: "Terms of use",
+            href: "/infopages/terms",
+            title: "link to your page",
+          },
+          {
+            label: "Privacy policy",
+            href: "/infopages/privacy",
+            title: "link to your page",
+          },
+          {
+            label: "Cookies",
+            href: "/infopages/cookies",
+            title: "link to your page",
+          },
+          { label: "404", href: "/404", title: "link to your page" },
+        ],
+      },
+    ],
+  },
+];
+---
 <section>
   <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-32">
-    <div class="max-w-5xl">
-      <h1
-        class="mt-4 text-4xl font-semibold tracking-tighter text-white font-display">
-        Overview
-      </h1>
+    <h1 class="text-4xl font-semibold tracking-tighter text-white font-display">
+      Overview
+    </h1>
+    <div class="mt-12 space-y-24">
+      {
+        pageSections.map((section) => (
+          <div>
+            <p class="text-2xl font-semibold tracking-tighter text-white font-display">
+              {section.sectionTitle}
+            </p>
+            <ul
+              role="list"
+              class="grid grid-cols-1 gap-10 mt-16 lg:grid-cols-4">
+              {section.categories.map((category) => (
+                <li>
+                  <p class="text-xl font-normal tracking-tight text-white font-display">
+                    {category.categoryName}
+                  </p>
+                  <ol
+                    role="list"
+                    class="mt-4 space-y-1 tracking-tight">
+                    {category.links.map((link) => (
+                      <li>
+                        <a
+                          class="text-sm text-vanta-400 hover:text-white"
+                          aria-label={link.title}
+                          title={link.title}
+                          href={link.href}>
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
-    <ol role="list" class="grid grid-cols-1 gap-10 mt-16 lg:grid-cols-4">
-      <li>
-        <p class="text-xl font-normal tracking-tight text-white font-display">
-          Landing pages
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/landings/one">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Landing One
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/landings/two">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Landing Two
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/landings/three">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Landing Three
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/infopages/about">
-              <span class="text-sm text-vanta-400 hover:text-white">About</span>
-            </a>
-          </li>
-          <li>
-            <a href="/infopages/faq">
-              <span class="text-sm text-vanta-400 hover:text-white">FAQ</span>
-            </a>
-          </li>
-          <li>
-            <a href="/pricing/pricing-simple">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Pricing simple</span
-              >
-            </a>
-          </li>
-          <li>
-            <a href="/pricing/pricing-tiers">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Pricing tiers</span
-              >
-            </a>
-          </li>
-        </ol>
-        <p
-          class="mt-12 text-xl font-normal tracking-tight text-white font-display">
-          Events
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/events/all-events">
-              <span class="text-sm text-vanta-400 hover:text-white">Events</span
-              >
-            </a>
-          </li>
-          <li>
-            <a href="/events/event-details">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Event details</span
-              >
-            </a>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <p class="text-xl font-normal tracking-tight text-white font-display">
-          School
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/courses/all-courses-one">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Courses home one
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/courses/all-courses-two">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Courses home two
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/courses/all-courses-three">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Courses home three
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/courses/course-details">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Courses details
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/courses/purchased-course">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Purchased Course
-              </span>
-            </a>
-          </li>
-        </ol>
-        <p
-          class="mt-12 text-xl font-normal tracking-tight text-white font-display">
-          Teachers
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/teachers/teachers">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Teachers</span
-              >
-            </a>
-          </li>
-          <li>
-            <a href="/teachers/teacher-details">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Teachers details</span
-              >
-            </a>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <p class="text-xl font-normal tracking-tight text-white font-display">
-          Blog utilities
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/blog/blog-one">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Blog home One
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/posts/1">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Blog Post
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="/tags">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Tag index
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/tags">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Tag Category
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/rss.xml">
-              <span class="text-sm text-vanta-400 hover:text-white">RSS</span>
-            </a>
-          </li>
-        </ol>
-        <p
-          class="mt-12 text-xl font-normal tracking-tight text-white font-display">
-          Utility pages
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a
-              class="flex flex-col justify-between w-full lg:flex-row"
-              href="/infopages/terms">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Terms of use
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              class="flex flex-col justify-between w-full lg:flex-row"
-              href="/infopages/privacy">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Privacy policy
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              class="flex flex-col justify-between w-full lg:flex-row"
-              href="/infopages/cookies">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Cookies
-              </span>
-            </a>
-          </li>
-          <li>
-            <a
-              class="flex flex-col justify-between w-full lg:flex-row"
-              href="/404">
-              <span class="text-sm text-vanta-400 hover:text-white">404</span>
-            </a>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <p class="text-xl font-normal tracking-tight text-white font-display">
-          Forms
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/forms/contact">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Contact
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/forms/signin">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Sign In
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/forms/signup">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Sign Up
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/forms/password">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Password
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/forms/coming-soon">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Coming soon
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/forms/download">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Download
-              </span>
-            </a>
-          </li>
-        </ol>
-        <p
-          class="mt-12 text-xl font-normal tracking-tight text-white font-display">
-          System pages
-        </p>
-        <ol role="list" class="mt-4 space-y-1 tracking-tight">
-          <li>
-            <a href="/system/styleguide">
-              <span class="text-sm text-vanta-400 hover:text-white"
-                >Style guide</span
-              >
-            </a>
-          </li>
-        </ol>
-      </li>
-    </ol>
   </div>
 </section>

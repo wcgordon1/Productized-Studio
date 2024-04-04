@@ -1,9 +1,11 @@
 ---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeroOne from "@/components/heros/HeroOne.astro";
 import CloudOne from "@/components/logocloud/CloudOne.astro";
 import FeatureOne from "@/components/features/FeatureOne.astro";
-import CoursePreviewOne from "@/components/courses/CoursePreviewOne.astro";
+import EntriesOne from "@/components/courses/EntriesOne.astro";
 import FeatureTwo from "@/components/features/FeatureTwo.astro";
 import TestimonialOne from "@/components/testimonials/TestimonialOne.astro";
 import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
@@ -13,7 +15,49 @@ import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
   <HeroOne />
   <CloudOne />
   <FeatureOne />
-  <CoursePreviewOne />
+
+  <section class="relative overflow-hidden">
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl mx-auto text-center">
+        <p
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+          Explore our most <span class="lg:block">popular courses</span>
+        </p>
+        <p class="text-vanta-300 mt-4 max-w-sm mx-auto">
+          Dive into courses loved by learners worldwide
+        </p>
+        <div class="flex mt-8 justify-center mx-auto">
+          <a
+            href="/courses/home-one"
+            class="rounded-lg px-4 py-2 text-sm transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-10 ring-1 ring-inset ring-white/10"
+            >See all our courses</a
+          >
+        </div>
+      </div>
+      <div class="relative">
+        <img
+          class="absolute blur-3xl w-96 inset-x-0 mx-auto h-96 -mt-8"
+          src="/avatars/avatar1.svg"
+          alt=""
+        />
+        <ul
+          class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+          role="list">
+          {
+            allPosts.slice(0,3).map((post) => (
+              <EntriesOne
+                url={"/courses/" + post.slug}
+                courseTtitle={post.data.courseTitle}
+                intro={post.data.intro}
+                price={post.data.price}
+                avatar={post.data.avatar.url}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
   <FeatureTwo />
   <TestimonialOne />
   <SubscribeOne />

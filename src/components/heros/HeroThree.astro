@@ -1,3 +1,17 @@
+---
+const brandLogos = [
+  { id: 1, src: "/brands/1.svg", alt: "Brand 1" },
+  { id: 2, src: "/brands/2.svg", alt: "Brand 2" },
+  { id: 3, src: "/brands/3.svg", alt: "Brand 3" },
+];
+const widgets = [
+  { id: 1, src: "/widget2.svg", rotationClass: "lg:rotate-6" },
+  { id: 2, src: "/widget4.svg", rotationClass: "lg:-rotate-12" },
+  { id: 3, src: "/widget6.svg", rotationClass: "lg:-rotate-12" },
+  { id: 4, src: "/widget1.svg", rotationClass: "lg:rotate-12" },
+];
+---
+
 <section>
   <div
     class="absolute inset-x-0 justify-center w-32 ml-auto rounded-lg opacity-50 bg-gradient-to-r from-vanta-50 via-vanta-200 to-vanta-600 h-42 right-32 top-64 lg:w-96 lg:h-96 blur-3xl">
@@ -20,59 +34,45 @@
         <div class="relative flex flex-col max-w-xl gap-2 mt-12 sm:flex-row">
           <a
             href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/f0a11cac-e5c4-4cee-9a11-631749fd6647"
+            aria-label="your label"
+            title="link to your page"
             class="flex items-center justify-center h-10 px-4 py-2 text-sm text-white transition-all rounded-lg hover:to-vanta-600 bg-gradient-to-b from-vanta-300 via-vanta-400 to-vanta-500"
             >Buy Vanta</a
           >
           <a
             href="/"
+            aria-label="your label"
+            title="link to your page"
             class="rounded-lg px-4 py-2 text-sm transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-10 ring-1 ring-inset ring-white/10"
             >See all pages</a
           >
         </div>
         <div
           class="grid justify-between grid-cols-2 mt-12 -ml-4 lg:mt-24 sm:grid-cols-3 lg:grid-cols-4">
-          <p><img src="/brands/1.svg" alt="" /></p>
-          <p><img src="/brands/2.svg" alt="" /></p>
-          <p><img src="/brands/3.svg" alt="" /></p>
+          {
+            brandLogos.map((image) => (
+              <img
+                src={image.src}
+                alt={image.alt}
+              />
+            ))
+          }
         </div>
       </div>
       <div class="hidden gap-2 lg:grid lg:grid-cols-2">
-        <div>
-          <div
-            class="duration-500 lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 lg:rotate-6">
-            <img
-              class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
-              src="/widget2.svg"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            class="duration-500 lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 lg:-rotate-12">
-            <img
-              class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
-              src="/widget4.svg"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            class="duration-500 lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 lg:-rotate-12">
-            <img
-              class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
-              src="/widget6.svg"
-            />
-          </div>
-        </div>
-        <div>
-          <div
-            class="duration-500 ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 lg: rotate-12 hover:rotate-0">
-            <img
-              class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
-              src="/widget1.svg"
-            />
-          </div>
-        </div>
+        {
+          widgets.map((widget) => (
+            <div >
+              <div
+                class={`duration-500 lg:ring-white/10 lg:ring-1 lg:p-2 lg:rounded-3xl lg:bg-gradient-to-t from-white/20 hover:rotate-0 ${widget.rotationClass}`}>
+                <img
+                  class="block ring-1 ring-white/10 rounded-2xl shadow-massive"
+                  src={widget.src}
+                />
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>

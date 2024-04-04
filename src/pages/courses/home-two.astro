@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesTwo from "@/components/courses/EntriesTwo.astro";
+import FeatureFour from "@/components/features/FeatureFour.astro";
+import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="absolute bg-gradient-to-r from-vanta-50 via-vanta-200 to-vanta-600 h-42 -top-64 w-32 lg:w-96 lg:h-96 opacity-50 rounded-lg mx-auto inset-x-0 blur-3xl justify-center">
+    </div>
+    <div
+      class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-12">
+      <div class="text-center">
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 lg:text-6xl">
+          Explore our diverse<span class="lg:block"> course offerings</span>
+        </h1>
+        <p class="max-w-xs mx-auto mt-4 text-vanta-300">
+          Embark on a learning journey tailored to your interests and goals
+        </p>
+      
+      </div>
+
+      <ul
+        class="grid grid-cols-1 relative lg:grid-cols-2 mt-12 list-none gap-2 ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+        role="list">
+        {
+          allPosts.slice().map((post) => (
+            <EntriesTwo
+              url={"/courses/" + post.slug}
+              courseTtitle={post.data.courseTitle}
+              intro={post.data.intro}
+              price={post.data.price}
+              level={post.data.level}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <FeatureFour />
+  <SubscribeOne />
+</BaseLayout>

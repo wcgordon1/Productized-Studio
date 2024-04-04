@@ -1,0 +1,35 @@
+---
+const { courseTtitle, url, intro, avatar, price } = Astro.props;
+---
+<li
+  class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+  <div>
+    <div class="inline-flex justify-between items-center gap-4 w-full">
+      <p class="text-lg  font-display text-white lg:text-xl">
+        {courseTtitle}
+      </p>
+      <img
+        class="inline-block w-12 h-12 rounded-full ring-1 ring-vanta-800 shrink-0"
+        src={avatar}
+        alt={intro}
+      />
+    </div>
+    <p class="mt-8 text-sm text-vanta-300">
+      {intro}
+    </p>
+  </div>
+  <div class="inline-flex mt-24 justify-between items-center gap-4 w-full pt-2">
+    <div>
+      <p class="text-white text-2xl">
+        <span>{price}</span>
+      </p>
+    </div>
+    <div>
+      <a
+        href={url}
+        class="rounded-lg px-4 py-2 text-xs font-normal transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-8 ring-1 ring-inset ring-white/10">
+        Enroll Now
+      </a>
+    </div>
+  </div>
+</li>

@@ -1,3 +1,22 @@
+---
+const brandLogosSmall = [
+  { id: 1, src: "/brands/1.svg", alt: "Brand 1" },
+  { id: 2, src: "/brands/2.svg", alt: "Brand 2" },
+  { id: 3, src: "/brands/3.svg", alt: "Brand 3" },
+  { id: 4, src: "/brands/4.svg", alt: "Brand 4" },
+  { id: 5, src: "/brands/5.svg", alt: "Brand 5" },
+  { id: 6, src: "/brands/6.svg", alt: "Brand 6" },
+];
+const brandLogosLarge = [
+  { id: 7, src: "/brands/7.svg", alt: "Brand 7" },
+  { id: 8, src: "/brands/8.svg", alt: "Brand 8" },
+  { id: 9, src: "/brands/9.svg", alt: "Brand 9" },
+  { id: 10, src: "/brands/10.svg", alt: "Brand 10" },
+  { id: 11, src: "/brands/11.svg", alt: "Brand 11" },
+  { id: 12, src: "/brands/12.svg", alt: "Brand 12" },
+];
+---
+
 <section>
   <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
     <p class="text-sm text-vanta-300 text-center uppercase max-w-xs mx-auto">
@@ -6,47 +25,33 @@
     <div class="mx-auto flex w-5/6 flex-col gap-4">
       <div
         class="mx-auto grid grid-cols-2 items-center sm:grid-cols-3 lg:grid-cols-6">
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-8" src="/brands/1.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-8" src="/brands/2.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-8" src="/brands/3.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-8" src="/brands/4.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-8" src="/brands/5.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-8" src="/brands/6.svg" alt="" />
-        </div>
+        {
+          brandLogosSmall.map((logo) => (
+            <div class="flex h-24 items-center justify-center px-4">
+              <img
+                class="h-8"
+                src={logo.src}
+                alt={logo.alt}
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
-    <div class="mx-auto hidden w-full flex-col gap-4 md:flex">
+    <div class="mx-auto hidden w-full md:flex">
       <div
         class="mx-auto grid grid-cols-2 items-center sm:grid-cols-3 lg:grid-cols-6">
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-12" src="/brands/7.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-12" src="/brands/8.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-12" src="/brands/9.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-12" src="/brands/10.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-12" src="/brands/11.svg" alt="" />
-        </div>
-        <div class="flex h-24 items-center justify-center px-4">
-          <img class="h-12" src="/brands/12.svg" alt="" />
-        </div>
+        {
+          brandLogosLarge.map((logo) => (
+            <div class="flex h-24 items-center justify-center px-4">
+              <img
+                class="h-12"
+                src={logo.src}
+                alt={logo.alt}
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>

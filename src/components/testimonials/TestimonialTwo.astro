@@ -1,5 +1,27 @@
 ---
-import { testimonials } from "../../data/testimonials.json";
+const testimonials = [
+  {
+    avatar: "/avatars/head4.svg",
+    course: "Digital Marketing",
+    student: "Roberto Johnson",
+    feedback:
+      "I'm amazed by the quality of courses offered on this platform. The instructors are experts in their fields, and the interactive learning approach keeps me engaged. I've gained skills I can immediately apply to my career",
+  },
+  {
+    avatar: "/avatars/head9.svg",
+    course: "Data Science",
+    student: "Emilia Pirelli",
+    feedback:
+      "As a full-time professional, I needed flexible learning options. This platform exceeded my expectations. The self-paced courses and diverse subjects let me customize my learning journey. I've gained new skills that helped me stand out in my industry.",
+  },
+  {
+    avatar: "/avatars/head6.svg",
+    course: "Creative Writing",
+    student: "Fino Como",
+    feedback:
+      "The community here is incredible. From insightful discussions to peer feedback, I feel supported every step of the way. The certifications I earned have boosted my resume, and I've found a platform that truly values my growth.",
+  },
+];
 ---
 
 <section class="relative overflow-hidden">
@@ -21,31 +43,24 @@ import { testimonials } from "../../data/testimonials.json";
         testimonials.slice(0, 3).map((template) => (
           <>
             <li>
-              <div>
-                <div class="flex flex-col justify-between h-full">
-                  <div class="flex-shrink-0 block ">
-                    <div class="flex flex-col items-center">
-                      <div>
-                        <img
-                          class="inline-block w-12 h-12 lg:w-32 lg:h-32 rounded-full  ring-1 ring-vanta-800 shrink-0"
-                          src={template.avatar}
-                          alt={template.feedback}
-                        />
-                      </div>
-                      <div class="mt-4">
-                        <p class="text-sm font-display text-white">
-                          {template.student}
-                        </p>
-                        <p class="     text-vanta-300">{template.grade}</p>
-                      </div>
-                    </div>
-                  </div>
+              <div class="flex flex-col justify-between h-full">
+                <div class="flex flex-col items-center">
                   <div>
-                    <p class="mt-8 text-sm text-vanta-300">
-                      "{template.feedback}"
+                    <img
+                      class="inline-block w-12 h-12 lg:w-32 lg:h-32 rounded-full  ring-1 ring-vanta-800 shrink-0"
+                      src={template.avatar}
+                      alt={template.feedback}
+                    />
+                  </div>
+                  <div class="mt-4">
+                    <p class="text-sm font-display text-white">
+                      {template.student}
                     </p>
+                    <p class="    text-vanta-300">{template.course}</p>
                   </div>
                 </div>
+
+                <p class="mt-8 text-sm text-vanta-300 text-pretty">"{template.feedback}"</p>
               </div>
             </li>
           </>

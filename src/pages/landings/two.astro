@@ -1,18 +1,65 @@
 ---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeroTwo from "@/components/heros/HeroTwo.astro";
 import CloudTwo from "@/components/logocloud/CloudTwo.astro";
 import FeatureThree from "@/components/features/FeatureThree.astro";
-import CoursePreviewTwo from "@/components/courses/CoursePreviewTwo.astro";
+import EntriesTwo from "@/components/courses/EntriesTwo.astro";
 import FeatureFour from "@/components/features/FeatureFour.astro";
 import TestimonialTwo from "@/components/testimonials/TestimonialTwo.astro";
 import SubscribeTwo from "@/components/ctas/SubscribeTwo.astro";
 ---
+
 <BaseLayout>
   <HeroTwo />
   <CloudTwo />
   <FeatureThree />
-  <CoursePreviewTwo />
+  <section class="relative overflow-hidden">
+    <div
+      class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-end relative">
+        <div class="lg:col-span-2">
+          <p
+            class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+            Explore our most <span class="lg:block">popular courses</span>
+          </p>
+          <p class="text-vanta-300 mt-4 max-w-sm">
+            Dive into courses loved by learners worldwide
+          </p>
+        </div>
+        <div class="flex lg:ml-auto">
+          <a
+            href="/courses/all-courses-three"
+            class="rounded-lg px-4 py-2 text-sm transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-10 ring-1 ring-inset ring-white/10"
+            >See all our courses</a
+          >
+        </div>
+      </div>
+      <div class="relative">
+        <img
+          class="absolute blur-3xl w-96 inset-x-0 ml-auto h-96 right-32 -mt-12 lg:-mt-32"
+          src="/avatars/avatar1.svg"
+          alt=""
+        />
+        <ul
+          class="grid grid-cols-1 relative lg:grid-cols-2 mt-12 list-none gap-2 ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+          role="list">
+          {
+            allPosts.slice(0,2).map((post) => (
+              <EntriesTwo
+                url={"/courses/" + post.slug}
+                courseTtitle={post.data.courseTitle}
+                intro={post.data.intro}
+                price={post.data.price}
+                level={post.data.level}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
   <FeatureFour />
   <TestimonialTwo />
   <SubscribeTwo />

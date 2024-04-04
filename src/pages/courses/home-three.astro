@@ -1,0 +1,161 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("courses");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesThree from "@/components/courses/EntriesThree.astro";
+import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="absolute bg-gradient-to-r from-vanta-50 via-vanta-200 to-vanta-600 h-42 right-32 top-64 w-32 lg:w-96 lg:h-96 opacity-50 rounded-lg ml-auto inset-x-0 blur-3xl justify-center">
+    </div>
+    <div
+      class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-12">
+      <div class="max-w-2xl">
+        <div class="text-left">
+          <h1
+            class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 lg:text-6xl">
+            Explore our diverse course offerings
+          </h1>
+          <p class="max-w-xs mt-4 text-vanta-300">
+            Embark on a learning journey tailored to your interests and goals
+          </p>
+     
+        </div>
+      </div>
+      <div
+        x-data="{
+        tabSelected: 1,
+        tabId: $id('tabs'),
+        tabButtonClicked(tabButton){
+            this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+            this.tabRepositionMarker(tabButton);
+        },
+        tabRepositionMarker(tabButton){
+            this.$refs.tabMarker.style.width=tabButton.offsetWidth + 'px';
+            this.$refs.tabMarker.style.height=tabButton.offsetHeight + 'px';
+            this.$refs.tabMarker.style.left=tabButton.offsetLeft + 'px';
+        },
+        tabContentActive(tabContent){
+            return this.tabSelected == tabContent.id.replace(this.tabId + '-content-', '');
+        },
+        tabButtonActive(tabContent){
+            const tabId = tabContent.id.split('-').slice(-1);
+            return this.tabSelected == tabId;
+        }
+    }"
+        x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
+        class="relative w-full mt-12">
+        <div
+          x-ref="tabButtons"
+          class="relative inline-grid text-white items-center justify-center w-full h-12 grid-cols-3 select-none ring-1 ring-white/10 p-2 bg-card/80 px-2 rounded-lg">
+          <button
+            :id="$id(tabId)"
+            @click="tabButtonClicked($el);"
+            type="button"
+            :class="{ ' ' : tabButtonActive($el) }"
+            class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+            >UI/UX</button
+          >
+          <button
+            :id="$id(tabId)"
+            @click="tabButtonClicked($el);"
+            type="button"
+            :class="{ ' ' : tabButtonActive($el) }"
+            class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+            >Development</button
+          >
+          <button
+            :id="$id(tabId)"
+            @click="tabButtonClicked($el);"
+            type="button"
+            :class="{ ' ' : tabButtonActive($el) }"
+            class="relative z-20 inline-flex items-center justify-center w-full h-8 px-3 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+            >Graphic Design</button
+          >
+          <div
+            x-ref="tabMarker"
+            class="absolute left-0 z-10 w-1/2 h-8 duration-300 ease-out"
+            x-cloak>
+            <div
+              class="w-full h-8 bg-card/80 backdrop-blur-2xl rounded-md shadow-massive ring-1 ring-white/10">
+            </div>
+          </div>
+        </div>
+        <div class="relative flex items-center justify-center w-full mt-4">
+          <div
+            :id="$id(tabId + '-content')"
+            x-show="tabContentActive($el)"
+            class="relative">
+            <ul
+              class="grid list-none md:grid-cols-2 gap-2"
+              role="list">
+              {
+                allPosts.slice(0, 2).map((post) => (
+                  <EntriesThree
+                    url={"/courses/" + post.slug}
+                    courseTtitle={post.data.courseTitle}
+                    intro={post.data.intro}
+                    level={post.data.level}
+                    price={post.data.price}
+                    avatar={post.data.avatar.url}
+                  />
+                ))
+              }
+            </ul>
+          </div>
+
+          <div
+            :id="$id(tabId + '-content')"
+            x-show="tabContentActive($el)"
+            class="relative"
+            x-cloak>
+            <ul
+              class="grid list-none md:grid-cols-2 gap-2"
+              role="list">
+              {
+                allPosts.slice(2, 4).map((post) => (
+                  <EntriesThree
+                    url={"/courses/" + post.slug}
+                    courseTtitle={post.data.courseTitle}
+                    intro={post.data.intro}
+                    level={post.data.level}
+                    price={post.data.price}
+                    avatar={post.data.avatar.url}
+                  />
+                ))
+              }
+            </ul>
+          </div>
+
+          <div
+            :id="$id(tabId + '-content')"
+            x-show="tabContentActive($el)"
+            class="relative"
+            x-cloak>
+            <ul
+              class="grid list-none md:grid-cols-2 gap-2"
+              role="list">
+              {
+                allPosts.slice(4, 6).map((post) => (
+                  <EntriesThree
+                    url={"/courses/" + post.slug}
+                    courseTtitle={post.data.courseTitle}
+                    intro={post.data.intro}
+                    level={post.data.level}
+                    price={post.data.price}
+                    avatar={post.data.avatar.url}
+                  />
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SubscribeOne />
+</BaseLayout>

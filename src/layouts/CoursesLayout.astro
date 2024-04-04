@@ -1,0 +1,323 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import SubscribeTwo from "@/components/ctas/SubscribeTwo.astro";
+const { frontmatter } = Astro.props;
+import Video from "@/components/courses/Video.astro";
+const customerReviews = [
+  {
+    name: "Sarah Martinez",
+    date: "August 16, 2023",
+    avatarSrc: "/avatars/head7.svg",
+    rating: 5,
+    review:
+      "As a marketing professional, I was seeking a course that would help me understand the nuances of brand identity design. This course exceeded my expectations! The content is structured beautifully, and the real-world case studies provided practical insights. I now feel confident in crafting visually appealing and strategically aligned brand identities. Highly recommended!",
+  },
+  {
+    name: "John Anderson",
+    date: "August 12, 2023",
+    avatarSrc: "/avatars/head1.svg",
+    rating: 5,
+    review:
+      "I'm an entrepreneur with a small business, and this course was a game-changer for me. The lessons on color psychology and typography alone were worth it. The instructor's explanations are clear, and the hands-on exercises helped me apply what I learned. My brand's visual identity has improved drastically, thanks to this course.",
+  },
+  {
+    name: "Emily Carter",
+    date: "August 6, 2023",
+    avatarSrc: "/avatars/head8.svg",
+    rating: 4,
+    review:
+      "I've always been intrigued by design, but I'm not a designer by trade. This course made brand identity design accessible and enjoyable. The course materials are well-organized, and the assignments were engaging. I loved learning how to create a cohesive brand voice and design elements. This course has inspired me to explore design further!",
+  },
+];
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-12 lg:flex">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
+        <div>
+          <nav
+            aria-label="Sidebar"
+            class="bg-card ring-1 ring-white/10 rounded-xl p-4 lg:p-8">
+            <div>
+              <Video />
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10">
+              <div>
+                <a
+                  href="#"
+                  class="flex items-center h-10 px-4 py-2 text-sm text-black transition-all rounded-lg hover:to-vanta-600 bg-gradient-to-b from-vanta-300 via-vanta-400 to-vanta-500 justify-between"
+                  >Buy course
+                  <span>{frontmatter.price}</span></a
+                >
+
+                <ul
+                  class="list-none text-vanta-300 mt-8 justify-center flex flex-col gap-2">
+                  <li
+                    class="inline-flex items-center gap-2 w-full justify-between">
+                    <div class="inline-flex items-center gap-2 text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-stack-pop h-4 w-4"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.25"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M7 9.5l-3 1.5l8 4l8 -4l-3 -1.5"></path>
+                        <path d="M4 15l8 4l8 -4"></path>
+                        <path d="M12 11v-7"></path>
+                        <path d="M9 7l3 -3l3 3"></path>
+                      </svg>
+                      Level:
+                    </div>
+                    <span> {frontmatter.level}</span>
+                  </li>
+                  <li
+                    class="inline-flex items-center gap-2 w-full justify-between">
+                    <div class="inline-flex items-center gap-2 text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-clock w-4 h-4"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.25"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                        <path d="M12 7v5l3 3"></path>
+                      </svg> Duration:
+                    </div>
+                    <span> {frontmatter.duration}</span>
+                  </li>
+                  <li
+                    class="inline-flex items-center gap-2 w-full justify-between">
+                    <div class="inline-flex items-center gap-2 text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-player-play w-4 h-4"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.25"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M7 4v16l13 -8z"></path>
+                      </svg>Videos:
+                    </div>
+                    <span> {frontmatter.videos}</span>
+                  </li>
+                  <li
+                    class="inline-flex items-center gap-2 w-full justify-between">
+                    <div class="inline-flex items-center gap-2 text-white">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-file-description w-4 h-4"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.25"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                        <path
+                          d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                        ></path>
+                        <path d="M9 17h6"></path>
+                        <path d="M9 13h6"></path>
+                      </svg>File:
+                    </div>
+                    <span> {frontmatter.files}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="lg:order-first lg:col-span-2">
+          <div class="flex-shrink-0">
+            <div class="max-w-2xl">
+              <p
+                class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-5xl">
+                {frontmatter.courseTitle}
+              </p>
+              <p class="text-vanta-300 mt-4 text-balance">
+                {frontmatter.intro}
+              </p>
+
+              <div
+                class="ring-white/10 ring-1 p-2 rounded-3xl mt-12 bg-gradient-to-t from-white/20">
+                <div
+                  class="inline-flex items-center gap-8 w-full bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1">
+                  <div>
+                    <img
+                      class="inline-block w-24 h-24 rounded-full ring-1 ring-vanta-800 shrink-0"
+                      src={frontmatter.avatar.url}
+                      alt={frontmatter.avatar.alt}
+                    />
+                  </div>
+                  <div>
+                    <span
+                      class="inline-flex items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+                      {frontmatter.role}
+                    </span>
+                    <p class="text-lg mt-2 font-display text-white lg:text-xl">
+                      {frontmatter.teacher}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              x-data="{
+        tabSelected: 1,
+        tabId: $id('tabs'),
+        tabButtonClicked(tabButton){
+            this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+            this.tabRepositionMarker(tabButton);
+        },
+        tabRepositionMarker(tabButton){
+            this.$refs.tabMarker.style.width=tabButton.offsetWidth + 'px';
+            this.$refs.tabMarker.style.height=tabButton.offsetHeight + 'px';
+            this.$refs.tabMarker.style.left=tabButton.offsetLeft + 'px';
+        },
+        tabContentActive(tabContent){
+            return this.tabSelected == tabContent.id.replace(this.tabId + '-content-', '');
+        },
+        tabButtonActive(tabContent){
+            const tabId = tabContent.id.split('-').slice(-1);
+            return this.tabSelected == tabId;
+        }
+    }"
+              x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);"
+              class="relative w-full mt-12">
+              <div
+                x-ref="tabButtons"
+                class="relative inline-grid text-white text-left w-full h-8 grid-cols-3 select-none border-b border-white/10">
+                <button
+                  :id="$id(tabId)"
+                  @click="tabButtonClicked($el);"
+                  type="button"
+                  :class="{ ' ' : tabButtonActive($el) }"
+                  class="relative z-20 inline-flex w-full h-8 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+                  >About</button
+                >
+                <button
+                  :id="$id(tabId)"
+                  @click="tabButtonClicked($el);"
+                  type="button"
+                  :class="{ ' ' : tabButtonActive($el) }"
+                  class="relative z-20 inline-flex w-full h-8 text-sm transition-all rounded-md cursor-pointer whitespace-nowrap"
+                  >Reviews</button
+                >
+
+                <div
+                  x-ref="tabMarker"
+                  class="absolute left-0 z-10 w-12 h-8 duration-300 ease-out"
+                  x-cloak>
+                  <div class="w-12 h-8 border-b border-white"></div>
+                </div>
+              </div>
+              <div class="relative w-full mt-4">
+                <div
+                  :id="$id(tabId + '-content')"
+                  x-show="tabContentActive($el)"
+                  class="relative">
+                  <ul
+                    class=""
+                    role="list">
+                    <div class="mt-12 prose-styles">
+                      <slot />
+                    </div>
+                  </ul>
+                </div>
+                <div
+                  :id="$id(tabId + '-content')"
+                  x-show="tabContentActive($el)"
+                  class="relative"
+                  x-cloak>
+                  <ul role="list">
+                    <div class="mt-12">
+                      <h3 class="text-white text-xl lg:text-2xl">
+                        Customer Reviews
+                      </h3>
+                      {
+                        customerReviews.map((review) => (
+                          <div class="flex space-x-4 text-sm text-vanta-300">
+                            <div class="flex-none py-10">
+                              <img
+                                src={review.avatarSrc}
+                                alt=""
+                                class="h-16 p-2 w-16 rounded-full ring-1 ring-white/10"
+                              />
+                            </div>
+                            <div class="py-10">
+                              <h3 class="text-lg font-display text-white lg:text-xl">
+                                {review.name}
+                              </h3>
+                              <p>
+                                <time datetime={review.date}>
+                                  {review.date}
+                                </time>
+                              </p>
+                              <div class="mt-4 flex items-center">
+                                {[...Array(5)].map((_, i) => (
+                                  <svg
+                                    class={`text-${i < review.rating ? "white" : "opacity-50"} h-5 w-5 flex-shrink-0`}
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    aria-hidden="true">
+                                    <path
+                                      fill-rule="evenodd"
+                                      d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                      clip-rule="evenodd"
+                                    />
+                                  </svg>
+                                ))}
+                              </div>
+                              <p class="sr-only">
+                                {review.rating} out of 5 stars
+                              </p>
+                              <div class="prose prose-sm mt-4 max-w-none text-vanta-300">
+                                <p>{review.review}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      }
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <SubscribeTwo />
+</BaseLayout>

@@ -1,3 +1,68 @@
+---
+const learningFeatures = [
+  {
+    id: "mainFeature",
+    type: "feature",
+    content: {
+      title: "Personalized learning paths",
+      description:
+        "Embark on a tailored educational journey, with courses curated to match your interests, goals, and learning pace.",
+    },
+    mdColStart: 2,
+  },
+  {
+    id: "interactiveContent",
+    type: "group",
+    items: [
+      {
+        title: "Interactive discussions",
+        description:
+          "Engage in vibrant discussions with fellow learners and educators, fostering a collaborative learning environment.",
+      },
+      {
+        title: "Rich multimedia content",
+        description:
+          "Dive into a variety of learning materials, from video lectures to interactive quizzes, ensuring an engaging experience.",
+      },
+    ],
+    mdColStart: 1,
+  },
+  {
+    id: "widget",
+    type: "widget",
+    src: "/widget6.svg",
+    mdColStart: 2,
+  },
+  {
+    id: "accessAndTracking",
+    type: "group",
+    items: [
+      {
+        title: "Anytime, anywhere access",
+        description:
+          "Enjoy the flexibility of learning on your schedule, accessing courses and resources seamlessly across devices.",
+      },
+      {
+        title: "Progress tracking",
+        description:
+          "Monitor your learning milestones and accomplishments, motivating you to stay on track and celebrate your achievements.",
+      },
+    ],
+    mdColStart: 3,
+  },
+  {
+    id: "expertInstructors",
+    type: "feature",
+    content: {
+      title: "Expert instructors",
+      description:
+        "Learn from accomplished experts and industry professionals, gaining insights from their real-world experience.",
+    },
+    mdColStart: 2,
+  },
+];
+---
+
 <section class="relative overflow-hidden">
   <div
     class="h-[0.080rem] bg-gradient-to-r from-vanta-950 max-w-3xl mx-auto via-vanta-300 to-vanta-950">
@@ -13,81 +78,40 @@
         companion
       </p>
     </div>
-    <ul
-      class="grid grid-cols-1 lg:text-center gap-6 mt-12 list-none md:grid-cols-3 md:gap-12 md:mt-24"
-      role="list">
-      <li class="md:col-start-2">
-        <p class="text-lg font-display text-white lg:text-xl">
-          Personalized learning paths
-        </p>
-        <p class="mt-2 text-sm text-vanta-300">
-          Embark on a tailored educational journey, with courses curated to
-          match your interests, goals, and learning pace.
-        </p>
-      </li>
-      <li class="md:col-start-1">
+   <ul class="grid grid-cols-1 lg:text-center gap-6 mt-12 list-none md:grid-cols-3 md:gap-12 md:mt-24" role="list">
+  {learningFeatures.map((item) => (
+    <li class={`md:col-start-${item.mdColStart}`}>
+      {item.type === 'feature' && (
+        <>
+          <p class="text-lg font-display text-white lg:text-xl">
+            {item.content.title}
+          </p>
+          <p class="mt-2 text-sm text-vanta-300">
+            {item.content.description}
+          </p>
+        </>
+      )}
+      {item.type === 'group' && (
         <ol role="list" class="grid grid-cols-1 gap-12 list-none">
-          <li>
-            <p class="text-lg font-display text-white lg:text-xl">
-              Interactive discussions
-            </p>
-            <p class="mt-2 text-sm text-vanta-300">
-              Engage in vibrant discussions with fellow learners and educators,
-              fostering a collaborative learning environment.
-            </p>
-          </li>
-          <li>
-            <p class="text-lg font-display text-white lg:text-xl">
-              Rich multimedia content
-            </p>
-            <p class="mt-2 text-sm text-vanta-300">
-              Dive into a variety of learning materials, from video lectures to
-              interactive quizzes, ensuring an engaging experience.
-            </p>
-          </li>
+          {item.items.map((subItem) => (
+            <li>
+              <p class="text-lg font-display text-white lg:text-xl">
+                {subItem.title}
+              </p>
+              <p class="mt-2 text-sm text-vanta-300">
+                {subItem.description}
+              </p>
+            </li>
+          ))}
         </ol>
-      </li>
-      <li class="items-center inline-flex">
-        <div
-          class="ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
-          <img
-            class="hidden md:block ring-1 ring-white/10 rounded-2xl shadow-massive"
-            src="/widget6.svg"
-          />
+      )}
+      {item.type === 'widget' && (
+        <div class="ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
+          <img class="hidden md:block ring-1 ring-white/10 rounded-2xl shadow-massive" src={item.src} />
         </div>
-      </li>
-      <li class="lg:col-start-3">
-        <ol role="list" class="grid grid-cols-1 gap-12 list-none">
-          <li>
-            <p class="text-lg font-display text-white lg:text-xl">
-              Anytime, anywhere access
-            </p>
-            <p class="mt-2 text-sm text-vanta-300">
-              Enjoy the flexibility of learning on your schedule, accessing
-              courses and resources seamlessly across devices.
-            </p>
-          </li>
-          <li>
-            <p class="text-lg font-display text-white lg:text-xl">
-              Progress tracking
-            </p>
-            <p class="mt-2 text-sm text-vanta-300">
-              Monitor your learning milestones and accomplishments, motivating
-              you to stay on track and celebrate your achievements.
-            </p>
-          </li>
-        </ol>
-      </li>
-
-      <li class="md:col-start-2">
-        <p class="text-lg font-display text-white lg:text-xl">
-          Expert instructors
-        </p>
-        <p class="mt-2 text-sm text-vanta-300">
-          Learn from accomplished experts and industry professionals, gaining
-          insights from their real-world experience.
-        </p>
-      </li>
-    </ul>
+      )}
+    </li>
+  ))}
+</ul>
   </div>
 </section>

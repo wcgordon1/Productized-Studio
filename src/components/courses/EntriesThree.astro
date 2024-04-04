@@ -1,0 +1,65 @@
+---
+const { courseTtitle, url, intro, avatar, price, level } = Astro.props;
+---
+<li class="ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
+  <div
+    class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+    <div>
+      <div class="inline-flex justify-between items-center gap-4 w-full">
+        <div>
+          <img
+            class="inline-block w-24 h-24 rounded-full ring-1 ring-vanta-800 shrink-0"
+            src={avatar}
+            alt={intro}
+          />
+        </div>
+        <div class="order-first">
+          <p class="text-lg font-display text-white lg:text-xl">
+            {courseTtitle}
+          </p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <span
+          class="inline-flex gap-2 items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-school h-4 w-4"
+            viewBox="0 0 24 24"
+            stroke-width="1.25"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            ></path>
+            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"></path>
+            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"></path>
+          </svg>
+          <span>{level}</span>
+        </span>
+      </div>
+      <p class="mt-8 text-sm text-vanta-300">
+        {intro}
+      </p>
+    </div>
+    <div
+      class="inline-flex mt-24 justify-between items-center gap-4 w-full pt-2">
+      <div>
+        <p class="text-white text-2xl">
+          <span>{price}</span>
+        </p>
+      </div>
+      <div>
+        <a
+          href={url}
+          class="rounded-lg px-4 py-2 text-xs font-normal transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-8 ring-1 ring-inset ring-white/10">
+          Enroll Now
+        </a>
+      </div>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-56">
+      <div class="max-w-3xl mx-auto">
+        <p
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+          {frontmatter.page}
+        </p>
+        <p class="text-base mt-4 text-white max-w-2xl">
+          Updated on {frontmatter.pubDate.toString().slice(0, 10)}
+        </p>
+        <div class="prose-styles mx-auto mt-12">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

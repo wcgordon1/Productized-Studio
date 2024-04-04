@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("teachers");
+import TeacherEntries from "@/components/teachers/TeacherEntries.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SubscribeOne from "@/components/ctas/SubscribeOne.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56 lg:pb-24">
+      <div>
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+          Meet our Teachers.
+        </h1>
+        <p class="max-w-xl mt-4 text-vanta-300">
+          Guiding you through the world of brand & identity design
+        </p>
+      </div>
+      <ul
+        class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20"
+        role="list">
+        {
+          allPosts.slice().map((post) => (
+            <TeacherEntries
+              url={"/teachers/" + post.slug}
+              name={post.data.name}
+              intro={post.data.intro}
+              role={post.data.role}
+              avatar={post.data.avatar.url}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <SubscribeOne />
+</BaseLayout>

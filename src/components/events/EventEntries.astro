@@ -1,0 +1,38 @@
+---
+const { title, url, description, meetingDate, location } = Astro.props;
+---
+
+<li
+  class="bg-card/80 backdrop-blur-2xl p-8 rounded-2xl shadow-massive ring-white/10 ring-1 flex flex-col h-full justify-between">
+  <div>
+    <div class="inline-flex justify-between items-start gap-4 w-full">
+      <p class="text-lg mt-2 font-display text-white lg:text-xl">
+        {title}
+      </p>
+    </div>
+    <div class="flex flex-col mt-8 gap-2 w-full">
+      <div>
+        <span
+          class="inline-flex gap-2 items-center rounded-md bg-vanta-800 px-2 py-1 text-xs text-white ring-1 ring-inset ring-white/10">
+          {meetingDate}
+        </span>
+      </div>
+      <div>
+        <p class="inline-flex gap-2 items-center rounded-md text-xs text-white">
+          {location}
+        </p>
+      </div>
+    </div>
+    <p class="mt-8 text-sm text-vanta-300">
+      {description}
+    </p>
+  </div>
+  <div class="mt-12 flex">
+    <a
+      href={url}
+      title={title}
+      class="rounded-lg px-4 py-2 justify-between text-sm transition-all flex items-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-10 ring-1 ring-inset ring-white/10 w-auto">
+      Enroll today
+    </a>
+  </div>
+</li>

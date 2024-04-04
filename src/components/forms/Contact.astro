@@ -7,66 +7,75 @@
             class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2">
             Let's get started!
           </h2>
-          <p class="mt-2 text-base text-vanta-300">
+          <p class="mt-2 text-base text-vanta-300 text-pretty">
             Complete the details below so I can process your request and then
             schedule a time to discuss your goals.
           </p>
         </div>
       </div>
       <form>
-        <input autocomplete="false" name="hidden" style="display: none" />
-        <input
-          name="_redirect"
-          type="hidden"
-          value="https://jamstacker.studio/thankyou"
-        />
         <div class="mt-4 space-y-6">
           <div>
             <label
+              for="first-name"
               class="block mb-3 text-sm font-display text-white"
-              name="name">First name</label
+              >First name</label
             >
             <input
+              id="first-name"
+              name="first-name"
               class="block w-full h-10 px-4 py-3 text-vanta-300 bg-transparent border rounded-lg appearance-none border-white/10 placeholder-white/50 focus:border-vanta-300 focus:bg-transparent focus:outline-none focus:ring-vanta-300 sm:text-sm"
               placeholder="Your name"
+              required
             />
           </div>
           <div class="col-span-full">
             <label
+              for="company-name"
               class="block mb-3 text-sm font-display text-white"
-              name="company"
               >What is the name of your company / organisation?</label
             >
             <input
+              id="company-name"
+              name="company-name"
               class="block w-full h-10 px-4 py-3 text-vanta-300 bg-transparent border rounded-lg appearance-none border-white/10 placeholder-white/50 focus:border-vanta-300 focus:bg-transparent focus:outline-none focus:ring-vanta-300 sm:text-sm"
               placeholder="Company name"
+              required
             />
           </div>
           <div class="col-span-full">
             <label
+              for="email"
               class="block mb-3 text-sm font-display text-white"
-              name="email">How shall we contact you?</label
+              >How shall we contact you?</label
             >
             <input
+              id="email"
+              name="email"
               class="block w-full h-10 px-4 py-3 text-vanta-300 bg-transparent border rounded-lg appearance-none border-white/10 placeholder-white/50 focus:border-vanta-300 focus:bg-transparent focus:outline-none focus:ring-vanta-300 sm:text-sm"
               placeholder="email@example.com"
               autocomplete="off"
               type="email"
+              required
             />
           </div>
           <div>
             <label
+              for="project-details"
               class="block mb-3 text-sm font-display text-white"
-              name="message">Project details</label
+              >Project details</label
             >
             <div class="mt-1">
               <textarea
+                id="project-details"
+                name="project-details"
                 class="block w-full px-4 py-3 text-vanta-300 bg-transparent border rounded-lg appearance-none border-white/10 placeholder-white/50 focus:border-vanta-300 focus:bg-transparent focus:outline-none focus:ring-vanta-300 sm:text-sm"
                 placeholder="What are you working on?"
-                rows="4"></textarea>
+                rows="4"
+                required
+              ></textarea>
             </div>
           </div>
-
           <div class="col-span-full">
             <button
               class="flex items-center justify-center h-10 px-4 py-2 text-sm text-white transition-all rounded-lg hover:to-vanta-600 bg-gradient-to-b from-vanta-300 via-vanta-400 to-vanta-500 w-full"
