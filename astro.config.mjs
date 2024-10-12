@@ -18,5 +18,13 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://lexingtonthemes.com',
-  integrations: [tailwind(), sitemap(), mdx(), devtoolBreakpoints()]
+  integrations: [tailwind(), sitemap(), mdx(), devtoolBreakpoints()],
+  content: {
+    collections: [
+      {
+        name: 'studios',
+        type: 'content',
+      },
+    ],
+  },
 });

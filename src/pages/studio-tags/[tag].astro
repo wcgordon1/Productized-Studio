@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesOne from "@/components/studio/EntriesOne.astro";
+
+export async function getStaticPaths() {
+  const allStudios = await getCollection("studios");
+  const uniqueTags = [...new Set(allStudios.map((studio) => studio.data.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredStudios = allStudios.filter((studio) =>
+      studio.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { studios: filteredStudios },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { studios } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-56">
+      <h1 class="text-4xl font-display text-white">Studios tagged with {tag}</h1>
+      <ul class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
+        {studios.map((studio) => (
+          <EntriesOne
+            url={"/studios/" + studio.slug}
+            title={studio.data.title}
+            description={studio.data.description}
+            alt={studio.data.title}
+            pubDate={studio.data.pubDate.toString().slice(0, 10)}
+            author={studio.data.author}
+            image={studio.data.image.url}
+          />
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,128 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesOne from "@/components/studio/EntriesOne.astro";
+
+const allStudios = await getCollection("studios");
+
+// Sort studios: Warm Websites first, then featured, then the rest
+const sortedStudios = allStudios.sort((a, b) => {
+  if (a.data.title === "Warm Websites") return -1;
+  if (b.data.title === "Warm Websites") return 1;
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return 0;
+});
+
+const tags = [...new Set(sortedStudios.flatMap((studio) => studio.data.tags || []))];
+---
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-56">
+      <div>
+        <h1
+          class="bg-gradient-to-r from-vanta-50 via-vanta-300 to-vanta-600 bg-clip-text text-transparent text-4xl font-normal font-display tracking-tight pb-2 sm:text-6xl">
+          Explore our studios
+          <span class="lg:block"> for immersive learning experiences</span>
+        </h1>
+        <p class="max-w-xl mt-4 text-vanta-300">
+          Discover state-of-the-art studios designed to enhance your learning journey and unleash your creative potential
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-4 mt-12 gap-8">
+        <div class="flex flex-wrap items-center">
+          <div>
+            <label class="sr-only" for="search">Quick search</label>
+            <div class="relative flex items-center">
+              <input
+                class="w-full h-10 px-4 py-2 placeholder-vanta-300 duration-200 ring-1 ring-inset border-transparent ring-white/10 rounded-lg appearance-none bg-card focus:border-vanta-300 focus:outline-none focus:ring-vanta-300 sm:text-sm text-white lock pr-14"
+                id="search"
+                name="search"
+                type="text"
+                placeholder="Search studios..."
+              />
+              <div id="clearSearch" class="flex absolute inset-y-0 pr-1.5 py-1.5 right-0 hidden">
+                <kbd class="items-center inline-flex border-vanta-200 font-sans px-2 rounded text-white text-xs cursor-pointer">X</kbd>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol
+          role="list"
+          class="flex flex-wrap gap-3 lg:col-span-3 lg:ml-auto items-center">
+          {
+            tags.map((tag) => (
+              <li
+                class="rounded-lg text-xs px-4 py-1
+                transition-all flex items-center justify-center text-white bg-gradient-to-b from-white/[.105] to-white/[.15] hover:to-white/[.25] h-6 ring-1 ring-inset ring-white/10">
+                <a href={`/studio-tags/${tag}`}>{tag}</a>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+      <ul
+        id="studioList"
+        class="grid grid-cols-1 mt-12 list-none md:grid-cols-3 gap-2 lg:mt-24 relative ring-white/10 ring-1 p-2 rounded-3xl bg-gradient-to-t from-white/20">
+        {sortedStudios.map((studio) => (
+          <EntriesOne
+            url={`/studio/${studio.slug}`}
+            title={studio.data.title || ''}
+            description={studio.data.description || ''}
+            alt={studio.data.title || ''}
+            tags={studio.data.tags || []}
+            image={studio.data.image?.url || ''}
+            featured={studio.data.featured || false}
+          />
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('search') as HTMLInputElement;
+  const clearSearch = document.getElementById('clearSearch');
+  const studioList = document.getElementById('studioList');
+  const studioCards = studioList?.getElementsByClassName('studio-card');
+
+  function performSearch(searchTerm: string) {
+    if (studioCards) {
+      Array.from(studioCards).forEach((card) => {
+        const title = card.querySelector('.studio-title')?.textContent?.toLowerCase() || '';
+        const description = card.querySelector('.studio-description')?.textContent?.toLowerCase() || '';
+        const tags = Array.from(card.querySelectorAll('.studio-tags li')).map(tag => tag.textContent?.toLowerCase() || '');
+
+        const isVisible = title.includes(searchTerm) || 
+                          description.includes(searchTerm) || 
+                          tags.some(tag => tag.includes(searchTerm));
+
+        (card as HTMLElement).style.display = isVisible ? '' : 'none';
+      });
+    }
+  }
+
+  function resetSearch() {
+    searchInput.value = '';
+    clearSearch?.classList.add('hidden');
+    if (studioCards) {
+      Array.from(studioCards).forEach((card) => {
+        (card as HTMLElement).style.display = '';
+      });
+    }
+  }
+
+  searchInput?.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    performSearch(searchTerm);
+
+    if (searchTerm.length >= 2) {
+      clearSearch?.classList.remove('hidden');
+    } else {
+      clearSearch?.classList.add('hidden');
+    }
+  });
+
+  clearSearch?.addEventListener('click', resetSearch);
+</script>
